@@ -1,0 +1,19 @@
+@import "./font.css";
+
+body {
+  section {
+    margin-bottom: 3rem;
+
+    &:first-child {
+      margin-top: 3rem;
+    }
+
+    > div {
+      margin-bottom: 3rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

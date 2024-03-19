@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pretendard Regular')
+    , url(./Pretendard-Regular.woff2) format('woff2')
+    , url(./Pretendard-Regular.woff) format('woff')
+    , url(./Pretendard-Regular.otf) format('otf')
+    ;
+}
+
+.pretendard {
+  font-family: 'Pretendard';
+}

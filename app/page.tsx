@@ -1,95 +1,50 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+    <main> {/* className="container-md" */}
+      <section className="row">
+        <div className="fs-1">정동헌 & 박선영</div>
+        <div className="fs-2 mb-0">2025년 1월 11일 토요일 오후 12시 30분</div>
+        <div className="fs-2">트라디노이 하우스웨딩홀</div>
+      </section>
+      <section className="row">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          src="/main1.png"
+          width={400}
+          height={1000}
+          alt="main picture 1">
+        </Image>
+      </section>
+      <section className="row fs-5">
+        <span>따스한 봄에 만난 사람과</span>
+        <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
+        <span>평생 서로에게 단짝이 되어줄</span>
+        <span>저희의 첫날에 초대합니다.</span>
+        <span>&nbsp;</span>
+        <span>귀한 걸음 하시어 축복과 격려 주시면</span>
+        <span>더없는 기쁨으로 간직하겠습니다.</span>
+      </section>
+      <section className="row">
+        <Image
+          src="/main2.png"
+          width={400}
+          height={1000}
+          alt="main picture 2">
+        </Image>
+      </section>
+      <section className="row">
+        <div className="col">정석순 김형순</div>
+        <div className="col">장남 정동헌</div>
+      </section>
+      <section className="row">
+        <div className="col">김남희</div>
+        <div className="col">장남 정동헌</div>
+      </section>
+      <section className="row">
+      </section>
+      <section className="row">
+      </section>
     </main>
   );
 }
