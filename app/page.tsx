@@ -1,22 +1,28 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import ImageSlider from "@/app/ui/ImageSlider";
+import "react-calendar/dist/Calendar.css";
+import Calendar from "@/app/ui/Calendar";
 
 export default function Home() {
   return (
-    <main> {/* className="container-md" */}
+    <main className="container">
       <section className="row">
-        <div className="fs-1">정동헌 & 박선영</div>
-        <div className="fs-2 mb-0">2025년 1월 11일 토요일 오후 12시 30분</div>
+        <div className="fs-1 mb-5">정동헌 & 박선영</div>
+        <div className="fs-2">2025년 1월 11일 토요일 오후 12시 30분</div>
         <div className="fs-2">트라디노이 하우스웨딩홀</div>
       </section>
-      <section className="row">
+      <section>
         <Image
+          className="img-fluid"
           src="/main1.png"
-          width={400}
-          height={1000}
+          width={430}
+          height={645}
           alt="main picture 1">
         </Image>
       </section>
-      <section className="row fs-5">
+      <section className="row fs-4">
         <span>따스한 봄에 만난 사람과</span>
         <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
         <span>평생 서로에게 단짝이 되어줄</span>
@@ -25,23 +31,120 @@ export default function Home() {
         <span>귀한 걸음 하시어 축복과 격려 주시면</span>
         <span>더없는 기쁨으로 간직하겠습니다.</span>
       </section>
-      <section className="row">
+      <section>
         <Image
+          className="img-fluid"
           src="/main2.png"
-          width={400}
-          height={1000}
+          width={429}
+          height={430}
           alt="main picture 2">
         </Image>
       </section>
-      <section className="row">
-        <div className="col">정석순 김형순</div>
-        <div className="col">장남 정동헌</div>
+      <section className="fs-4 mx-4">
+        <div className="row">
+          <div className="col col-md col-sm text-end">
+            <span>정석순</span>
+            <span className="mx-2"></span>
+            <span>김형순</span>
+          </div>
+          <div className="col col-md col-sm text-start">
+            <span className="fs-6">장남</span>
+            <span className="mx-2"></span>
+            <span>정동헌</span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col col-md col-sm text-end">
+            <span>김남희</span>
+          </div>
+          <div className="col col-md col-sm text-start">
+            <span className="fs-6">장녀</span>
+            <span className="mx-2"></span>
+            <span>박선영</span>
+          </div>
+        </div>
       </section>
-      <section className="row">
-        <div className="col">김남희</div>
-        <div className="col">장남 정동헌</div>
+      <section className="row justify-content-center">
+        <button type="button" className="btn btn-lg btn-dark w-75 fs-4">혼주에게 연락하기</button>
       </section>
-      <section className="row">
+      <section className="border">
+        <div className="row mb-1 align-items-center">
+          <div className="col-5 text-end">신랑</div>
+          <div className="col-3">정동헌</div>
+          <div className="col-4 d-flex justify-content-start align-items-center">
+            <a className="tel" href="tel:01076715530">
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+            </a>
+            <Image
+              src="/kakaotalk_sharing_btn_small.png"
+              width={34}
+              height={35}
+              alt="kakaotalk icon"></Image>
+          </div>
+        </div>
+        <div className="row mb-1 align-items-center">
+          <div className="col-5 text-end">신랑 아버지</div>
+          <div className="col-3">정석순</div>
+          <div className="col-4 d-flex justify-content-start align-items-center">
+            <a className="tel" href="tel:01076715530">
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+            </a>
+            <Image
+              src="/kakaotalk_sharing_btn_small.png"
+              width={34}
+              height={35}
+              alt="kakaotalk icon"></Image>
+          </div>
+        </div>
+        <div className="row mb-1 mb-3 align-items-center">
+          <div className="col-5 text-end">신랑 어머지</div>
+          <div className="col-3">김형순</div>
+          <div className="col-4 d-flex justify-content-start align-items-center">
+            <a className="tel" href="tel:01076715530">
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+            </a>
+            <Image
+              src="/kakaotalk_sharing_btn_small.png"
+              width={34}
+              height={35}
+              alt="kakaotalk icon"></Image>
+          </div>
+        </div>
+        <div className="row mb-1 align-items-center">
+          <div className="col-5 text-end">신부</div>
+          <div className="col-3">박선영</div>
+          <div className="col-4 d-flex justify-content-start align-items-center">
+            <a className="tel" href="tel:01076715530">
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+            </a>
+            <Image
+              src="/kakaotalk_sharing_btn_small.png"
+              width={34}
+              height={35}
+              alt="kakaotalk icon"></Image>
+          </div>
+        </div>
+        <div className="row mb-1 align-items-center">
+          <div className="col-5 text-end">신부 어머니</div>
+          <div className="col-3">김남희</div>
+          <div className="col-4 d-flex justify-content-start align-items-center">
+            <a className="tel" href="tel:01076715530">
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+            </a>
+            <Image
+              src="/kakaotalk_sharing_btn_small.png"
+              width={34}
+              height={35}
+              alt="kakaotalk icon"></Image>
+          </div>
+        </div>
+      </section>
+      <section className="row pt-5">
+        <div className="fs-2">Album</div>
+        <ImageSlider/>
+      </section>
+      <section className="pt-5 d-flex justify-content-center">
+        <Calendar/>
       </section>
       <section className="row">
       </section>

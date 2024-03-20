@@ -1,19 +1,29 @@
+@import "bootstrap/dist/css/bootstrap.css";
+@import "@fortawesome/fontawesome-svg-core/styles.css";
 @import "./font.css";
 
-body {
-  section {
+main {
+  > section {
     margin-bottom: 3rem;
 
     &:first-child {
       margin-top: 3rem;
     }
 
-    > div {
-      margin-bottom: 3rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    .img-fluid {
+      width: 100%;
+      height: 100%;
     }
+
+    a.tel {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .react-calendar {
+      pointer-events: none;
+    }
+
   }
 }
+

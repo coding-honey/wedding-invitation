@@ -3,12 +3,38 @@
   font-weight: 400;
   font-display: swap;
   src: local('Pretendard Regular')
-    , url(./Pretendard-Regular.woff2) format('woff2')
-    , url(./Pretendard-Regular.woff) format('woff')
-    , url(./Pretendard-Regular.otf) format('otf')
+    , url(./ext/Pretendard-Regular.woff2) format('woff2')
+    , url(./ext/Pretendard-Regular.woff) format('woff')
+    , url(./ext/Pretendard-Regular.otf) format('otf')
     ;
 }
 
 .pretendard {
   font-family: 'Pretendard';
+}
+
+@media (max-width: 576px) {
+  .fs-1 {
+    font-size: calc(1.175rem + 1.5vw) !important;
+  }
+
+  .fs-2 {
+    font-size: calc(1.125rem + 0.9vw) !important;
+  }
+
+  .fs-3 {
+    font-size: calc(1.1rem + 0.6vw) !important;
+  }
+
+  .fs-4 {
+    font-size: calc(1.075rem + 0.3vw) !important;
+  }
+
+  .fs-5 {
+    font-size: 1.05rem !important;
+  }
+
+  .fs-6 {
+    font-size: 0.7rem !important;
+  }
 }
