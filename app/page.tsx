@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faSms } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
 import "react-calendar/dist/Calendar.css";
-import Calendar from "@/app/ui/Calendar";
+import Calendar, {DefaultCalendar, TileArgs} from "@/app/ui/Calendar";
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="container">
-      <section className="row">
+      <section>
         <div className="fs-1 mb-5">정동헌 & 박선영</div>
         <div className="fs-2">2025년 1월 11일 토요일 오후 12시 30분</div>
         <div className="fs-2">트라디노이 하우스웨딩홀</div>
@@ -22,14 +23,16 @@ export default function Home() {
           alt="main picture 1">
         </Image>
       </section>
-      <section className="row fs-4">
-        <span>따스한 봄에 만난 사람과</span>
-        <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
-        <span>평생 서로에게 단짝이 되어줄</span>
-        <span>저희의 첫날에 초대합니다.</span>
-        <span>&nbsp;</span>
-        <span>귀한 걸음 하시어 축복과 격려 주시면</span>
-        <span>더없는 기쁨으로 간직하겠습니다.</span>
+      <section>
+        <div className="row fs-4">
+          <span>따스한 봄에 만난 사람과</span>
+          <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
+          <span>평생 서로에게 단짝이 되어줄</span>
+          <span>저희의 첫날에 초대합니다.</span>
+          <span>&nbsp;</span>
+          <span>귀한 걸음 하시어 축복과 격려 주시면</span>
+          <span>더없는 기쁨으로 간직하겠습니다.</span>
+        </div>
       </section>
       <section>
         <Image
@@ -73,13 +76,11 @@ export default function Home() {
           <div className="col-3">정동헌</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+              <FontAwesomeIcon icon={faPhone} className="me-3" />
             </a>
-            <Image
-              src="/kakaotalk_sharing_btn_small.png"
-              width={34}
-              height={35}
-              alt="kakaotalk icon"></Image>
+            <a className="sms" href="sms:01076715530">
+              <FontAwesomeIcon icon={faSms} />
+            </a>
           </div>
         </div>
         <div className="row mb-1 align-items-center">
@@ -87,13 +88,11 @@ export default function Home() {
           <div className="col-3">정석순</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+              <FontAwesomeIcon icon={faPhone} className="me-3" />
             </a>
-            <Image
-              src="/kakaotalk_sharing_btn_small.png"
-              width={34}
-              height={35}
-              alt="kakaotalk icon"></Image>
+            <a className="sms" href="sms:01076715530">
+              <FontAwesomeIcon icon={faSms} />
+            </a>
           </div>
         </div>
         <div className="row mb-1 mb-3 align-items-center">
@@ -101,13 +100,11 @@ export default function Home() {
           <div className="col-3">김형순</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+              <FontAwesomeIcon icon={faPhone} className="me-3" />
             </a>
-            <Image
-              src="/kakaotalk_sharing_btn_small.png"
-              width={34}
-              height={35}
-              alt="kakaotalk icon"></Image>
+            <a className="sms" href="sms:01076715530">
+              <FontAwesomeIcon icon={faSms} />
+            </a>
           </div>
         </div>
         <div className="row mb-1 align-items-center">
@@ -115,13 +112,11 @@ export default function Home() {
           <div className="col-3">박선영</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+              <FontAwesomeIcon icon={faPhone} className="me-3" />
             </a>
-            <Image
-              src="/kakaotalk_sharing_btn_small.png"
-              width={34}
-              height={35}
-              alt="kakaotalk icon"></Image>
+            <a className="sms" href="sms:01076715530">
+              <FontAwesomeIcon icon={faSms} />
+            </a>
           </div>
         </div>
         <div className="row mb-1 align-items-center">
@@ -129,24 +124,28 @@ export default function Home() {
           <div className="col-3">김남희</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
+              <FontAwesomeIcon icon={faPhone} className="me-3" />
             </a>
-            <Image
-              src="/kakaotalk_sharing_btn_small.png"
-              width={34}
-              height={35}
-              alt="kakaotalk icon"></Image>
+            <a className="sms" href="sms:01076715530">
+              <FontAwesomeIcon icon={faSms} />
+            </a>
           </div>
         </div>
       </section>
-      <section className="row pt-5">
+      <section className="pt-5">
         <div className="fs-2">Album</div>
         <ImageSlider/>
       </section>
-      <section className="pt-5 d-flex justify-content-center">
-        <Calendar/>
+      <section className="pt-5">
+        <div className="fs-2">Video</div>
+        {/* Videa */}
       </section>
-      <section className="row">
+      <section className="pt-5 d-flex justify-content-center">
+        <Suspense fallback={<DefaultCalendar/>}>
+          <Calendar/>
+        </Suspense>
+      </section>
+      <section>
       </section>
     </main>
   );

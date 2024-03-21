@@ -15,13 +15,26 @@ main {
       height: 100%;
     }
 
-    a.tel {
-      color: inherit;
-      text-decoration: none;
+    a {
+      &.tel, &.sms {
+        color: inherit;
+        text-decoration: none;
+      }
     }
 
     .react-calendar {
       pointer-events: none;
+      width: 85%;
+
+      .react-calendar__navigation__arrow {
+        display: none;
+      }
+
+      .react-calendar__tile--active {
+        color: red;
+        background: paleturquoise;
+        /*border: 1px solid red;*/
+      }
     }
 
   }
