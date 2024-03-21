@@ -5,7 +5,7 @@ import ImageSlider from "@/app/ui/ImageSlider";
 import "react-calendar/dist/Calendar.css";
 import dynamic from "next/dynamic";
 
-const Calendar = dynamic(() => import("@/app/ui/Calendar"), { ssr: false });
+const CalendarWrapper = dynamic(() => import("@/app/ui/CalendarWrapper"), { ssr: false });
 const VideoPlayer = dynamic(() => import("@/app/ui/VideoPlayer"), { ssr: false });
 
 export default function Home() {
@@ -144,8 +144,8 @@ export default function Home() {
           <VideoPlayer/>
         </div>
       </section>
-      <section className="pt-5 d-flex justify-content-center">
-        <Calendar />
+      <section>
+        <CalendarWrapper/>
       </section>
       <section>
         <div className="fs-2">오시는 길</div>
