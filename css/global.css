@@ -30,6 +30,12 @@ main {
         display: none;
       }
 
+      .react-calendar__month-view__days__day {
+        abbr {
+          display: none;
+        }
+      }
+
       .react-calendar__tile--active {
         color: red;
         background: paleturquoise;

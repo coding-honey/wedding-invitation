@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faSms } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
 import "react-calendar/dist/Calendar.css";
-import Calendar, {DefaultCalendar, TileArgs} from "@/app/ui/Calendar";
-import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 const Calendar = dynamic(() => import("@/app/ui/Calendar"), { ssr: false });
@@ -137,16 +135,14 @@ export default function Home() {
       </section>
       <section className="pt-5">
         <div className="fs-2">Album</div>
-        <ImageSlider/>
+        <ImageSlider />
       </section>
       <section className="pt-5">
         <div className="fs-2">Video</div>
-        {/* Videa */}
+        {/* Video */}
       </section>
       <section className="pt-5 d-flex justify-content-center">
-        <Suspense fallback={<DefaultCalendar/>}>
-          <Calendar/>
-        </Suspense>
+        <Calendar />
       </section>
       <section>
       </section>
