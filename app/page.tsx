@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faSms } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faMessage } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
 import "react-calendar/dist/Calendar.css";
 import dynamic from "next/dynamic";
@@ -78,10 +78,10 @@ export default function Home() {
           <div className="col-3">정동헌</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3" />
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
             </a>
             <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faSms} />
+              <FontAwesomeIcon icon={faMessage}/>
             </a>
           </div>
         </div>
@@ -90,10 +90,10 @@ export default function Home() {
           <div className="col-3">정석순</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3" />
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
             </a>
             <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faSms} />
+              <FontAwesomeIcon icon={faMessage}/>
             </a>
           </div>
         </div>
@@ -102,10 +102,10 @@ export default function Home() {
           <div className="col-3">김형순</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3" />
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
             </a>
             <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faSms} />
+              <FontAwesomeIcon icon={faMessage}/>
             </a>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default function Home() {
           <div className="col-3">박선영</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3" />
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
             </a>
             <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faSms} />
+              <FontAwesomeIcon icon={faMessage}/>
             </a>
           </div>
         </div>
@@ -126,10 +126,10 @@ export default function Home() {
           <div className="col-3">김남희</div>
           <div className="col-4 d-flex justify-content-start align-items-center">
             <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3" />
+              <FontAwesomeIcon icon={faPhone} className="me-3"/>
             </a>
             <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faSms} />
+              <FontAwesomeIcon icon={faMessage}/>
             </a>
           </div>
         </div>
@@ -146,6 +146,10 @@ export default function Home() {
       </section>
       <section className="pt-5 d-flex justify-content-center">
         <Calendar />
+      </section>
+      <section>
+        <div className="fs-2">오시는 길</div>
+        {/* TO-DO */}
       </section>
       <section>
       </section>
