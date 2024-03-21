@@ -5,8 +5,11 @@ import ImageSlider from "@/app/ui/ImageSlider";
 import "react-calendar/dist/Calendar.css";
 import Calendar, {DefaultCalendar, TileArgs} from "@/app/ui/Calendar";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 
-export default async function Home() {
+const Calendar = dynamic(() => import("@/app/ui/Calendar"), { ssr: false });
+
+export default function Home() {
   return (
     <main className="container">
       <section>
