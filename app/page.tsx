@@ -6,6 +6,7 @@ import "react-calendar/dist/Calendar.css";
 import dynamic from "next/dynamic";
 
 const Calendar = dynamic(() => import("@/app/ui/Calendar"), { ssr: false });
+const VideoPlayer = dynamic(() => import("@/app/ui/VideoPlayer"), { ssr: false });
 
 export default function Home() {
   return (
@@ -134,12 +135,14 @@ export default function Home() {
         </div>
       </section>
       <section className="pt-5">
-        <div className="fs-2">Album</div>
-        <ImageSlider />
+        <div className="fs-2 mb-3">Album</div>
+        <ImageSlider/>
       </section>
-      <section className="pt-5">
-        <div className="fs-2">Video</div>
-        {/* Video */}
+      <section>
+        <div className="fs-2 mb-3">Video</div>
+        <div className="d-flex justify-content-center">
+          <VideoPlayer/>
+        </div>
       </section>
       <section className="pt-5 d-flex justify-content-center">
         <Calendar />
