@@ -2,10 +2,9 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faMessage } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
-import "react-calendar/dist/Calendar.css";
 import dynamic from "next/dynamic";
+import CalendarWrapper from "@/app/ui/CalendarWrapper";
 
-const CalendarWrapper = dynamic(() => import("@/app/ui/CalendarWrapper"), { ssr: false });
 const VideoPlayer = dynamic(() => import("@/app/ui/VideoPlayer"), { ssr: false });
 
 export default function Home() {
@@ -147,10 +146,10 @@ export default function Home() {
       <section>
         <CalendarWrapper/>
       </section>
-      <section>
-        <div className="fs-2">오시는 길</div>
-        {/* TO-DO */}
-      </section>
+      {/*<section>*/}
+      {/*  <div className="fs-2">오시는 길</div>*/}
+      {/*  /!* TO-DO *!/*/}
+      {/*</section>*/}
       <section>
       </section>
     </main>
