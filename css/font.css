@@ -6,7 +6,7 @@
     , url(./ext/Pretendard-Regular.woff2) format('woff2')
     , url(./ext/Pretendard-Regular.woff) format('woff')
     , url(./ext/Pretendard-Regular.otf) format('otf')
-    ;
+  ;
 }
 
 .pretendard {

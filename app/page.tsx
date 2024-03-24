@@ -12,12 +12,9 @@ export default function Home() {
   return (
     <main className="container">
       <section>
-        <NaverMap />
-      </section>
-      <section>
-        <div className="fs-1 mb-5">정동헌 & 박선영</div>
-        <div className="fs-2">2025년 1월 11일 토요일 오후 12시 30분</div>
-        <div className="fs-2">트라디노이 하우스웨딩홀</div>
+        <div className="fs-1">정동헌 & 박선영</div>
+        <div className="fs-2 fw-bold mb-0">2025년 1월 11일 토요일 오후 12시 30분</div>
+        <div className="fs-2 fw-bold">트라디노이 하우스웨딩홀</div>
       </section>
       <section>
         <Image
@@ -34,7 +31,7 @@ export default function Home() {
           <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
           <span>평생 서로에게 단짝이 되어줄</span>
           <span>저희의 첫날에 초대합니다.</span>
-          <span>&nbsp;</span>
+          <br/><br/>
           <span>귀한 걸음 하시어 축복과 격려 주시면</span>
           <span>더없는 기쁨으로 간직하겠습니다.</span>
         </div>
@@ -49,7 +46,7 @@ export default function Home() {
         </Image>
       </section>
       <section className="fs-4 mx-4">
-        <div className="row">
+        <div className="row mb-0">
           <div className="col col-md col-sm text-end">
             <span>정석순</span>
             <span className="mx-2"></span>
@@ -138,11 +135,11 @@ export default function Home() {
         </div>
       </section>
       <section className="pt-5">
-        <div className="fs-2 mb-3">Album</div>
+        <div className="fs-2 fw-bold">Album</div>
         <ImageSlider/>
       </section>
       <section>
-        <div className="fs-2 mb-3">Video</div>
+        <div className="fs-2 fw-bold">Video</div>
         <div className="d-flex justify-content-center">
           <VideoPlayer/>
         </div>
@@ -150,11 +147,36 @@ export default function Home() {
       <section>
         <CalendarWrapper/>
       </section>
-      {/*<section>*/}
-      {/*  <div className="fs-2">오시는 길</div>*/}
-      {/*  /!* TO-DO *!/*/}
-      {/*</section>*/}
       <section>
+        <div className="fs-2 fw-bold">오시는 길</div>
+        <div>
+          <span className="fs-4">트라디노이</span>
+          <br/>
+          <span className="fs-4">서울 강남구 도곡로99길 16 6층</span>
+        </div>
+      </section>
+      <section>
+        <NaverMap />
+      </section>
+      <section className="text-start mx-5">
+        <div className="fs-2 fw-bold">지하철</div>
+        <div>
+          <span className="fs-4">[2호선] 삼성역 3번출구 도보 14분</span>
+          <br/>
+          <span className="fs-4">[3호선] 학여울역 1번출구 도보 14분</span>
+        </div>
+        <div className="fs-2 fw-bold">버스</div>
+        <div>
+          <span className="fs-4">마을버스 강남 01, 강남 06</span>
+          <br/>
+          <span className="fs-4">401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917</span>
+        </div>
+        <div className="fs-2 fw-bold">주차정보</div>
+        <div>
+          <span className="fs-4">* 대치2동문화센터 공영주차장입구</span>
+          <br/>
+          <span className="fs-4">주소: 서울 강남구 영동대로65길 24 대치2동주민센터</span>
+        </div>
       </section>
     </main>
   );

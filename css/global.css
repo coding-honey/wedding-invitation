@@ -5,6 +5,9 @@
 main {
   > section {
     margin-bottom: 3rem;
+    > div {
+      margin-bottom: 2rem;
+    }
 
     &:first-child {
       margin-top: 3rem;
