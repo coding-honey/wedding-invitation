@@ -24,7 +24,7 @@ export default function CalendarWrapper() {
           alt="man icon" />
         <Image
           className="mx-2"
-          src="/heart-icon.png"
+          src="/love-icon.png"
           width={24}
           height={24}
           alt="heart icon" />

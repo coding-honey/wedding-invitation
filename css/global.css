@@ -25,6 +25,10 @@ main {
     .MuiDateCalendar-root {
       .MuiPickersCalendarHeader-root {
         pointer-events: none;
+
+        .MuiPickersCalendarHeader-switchViewButton, .MuiPickersArrowSwitcher-root {
+          display: none;
+        }
       }
 
       .MuiDayCalendar-weekContainer {
@@ -33,6 +37,7 @@ main {
 
         .MuiButtonBase-root {
           padding: 6px;
+          font-family: 'Pretendard' !important;
         }
 
         .Mui-selected {

@@ -10,7 +10,7 @@
 }
 
 .pretendard {
-  font-family: 'Pretendard';
+  font-family: 'Pretendard' !important;
 }
 
 @media (max-width: 576px) {
