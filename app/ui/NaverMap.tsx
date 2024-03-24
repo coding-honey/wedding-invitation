@@ -5,7 +5,7 @@ import Script from "next/script";
 export default function NaverMap() {
   const initMap = () => {
   // Brewery
-  var brewery = new naver.maps.Map('brewery', {
+  var brewery = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.501860, 127.066003),
     zoom: 15,
     zoomControl: true
