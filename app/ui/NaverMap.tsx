@@ -6,12 +6,12 @@ export default function NaverMap() {
   const initMap = () => {
     // Brewery
     var map = new naver.maps.Map('map', {
-      center: new naver.maps.LatLng(37.501817, 127.066025),
+      center: new naver.maps.LatLng(3737.501804, 127.066049),
       zoom: 15,
       zoomControl: true
     });
     var breweryMarker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(37.501817, 127.066025),
+      position: new naver.maps.LatLng(37.501804, 127.066049),
       map: map
     })
   };
