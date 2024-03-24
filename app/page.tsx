@@ -4,12 +4,16 @@ import { faPhone, faMessage } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
 import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/ui/CalendarWrapper";
+import NaverMap from "@/app/ui/NaverMap";
 
 const VideoPlayer = dynamic(() => import("@/app/ui/VideoPlayer"), { ssr: false });
 
 export default function Home() {
   return (
     <main className="container">
+      <section>
+        <NaverMap />
+      </section>
       <section>
         <div className="fs-1 mb-5">정동헌 & 박선영</div>
         <div className="fs-2">2025년 1월 11일 토요일 오후 12시 30분</div>
