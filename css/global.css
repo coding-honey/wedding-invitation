@@ -1,56 +1,62 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import "@fortawesome/fontawesome-svg-core/styles.css";
 @import "./font.css";
+@import "./form.css";
 
 main {
   > section {
-    margin-bottom: 3rem;
-    > div {
-      margin-bottom: 2rem;
-    }
+    margin-bottom: 3rem !important;
 
     &:first-child {
-      margin-top: 3rem;
+      margin-top: 3rem !important;
+    }
+
+    > div {
+      margin-bottom: 2rem !important;
     }
 
     .img-fluid {
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
     }
 
     a {
       &.tel, &.sms {
-        color: inherit;
-        text-decoration: none;
+        color: inherit !important;
+        text-decoration: none !important;
       }
     }
 
     .MuiDateCalendar-root {
       .MuiPickersCalendarHeader-root {
-        pointer-events: none;
+        pointer-events: none !important;
 
-        .MuiPickersCalendarHeader-switchViewButton, .MuiPickersArrowSwitcher-root {
-          display: none;
+        .MuiPickersArrowSwitcher-root {
+          display: none !important;
         }
       }
 
       .MuiDayCalendar-weekContainer {
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: center !important;
 
         .MuiButtonBase-root {
-          padding: 6px;
+          padding: 6px !important;
           font-family: 'Pretendard' !important;
         }
 
         .Mui-selected {
-          border: 0;
-          border-radius: 50%;
-          color: #fff;
-          background-color: rgba(25, 118, 210, 0.4);
-          font-weight: 500;
+          border: 0 !important;
+          border-radius: 50% !important;
+          color: #fff !important;
+          background-color: rgba(25, 118, 210, 0.4) !important;
+          font-weight: 500 !important;
         }
       }
+    }
+
+    .MuiFormControlLabel-label {
+      font-family: 'Pretendard' !important;
     }
   }
 }

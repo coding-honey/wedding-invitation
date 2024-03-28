@@ -1,0 +1,10 @@
+form {
+  .row {
+    margin-bottom: 0.5rem;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
