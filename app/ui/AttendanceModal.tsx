@@ -18,9 +18,9 @@ export default function AttendanceModal() {
       <form>
         <div className="row">
           <FormLabel id="section-cd-group-label"
-                     className="col-4 text-end">구분</FormLabel>
+                     className="col-3 col-md-4 text-end">구분</FormLabel>
           <RadioGroup
-            className="col-5 col-lg-3 col-md-4 col-sm-5 justify-content-between"
+            className="col-7 col-md-5 col-sm-7 justify-content-start"
             row
             aria-labelledby="section-cd-group-label"
             defaultValue="groom"
@@ -33,34 +33,34 @@ export default function AttendanceModal() {
           </RadioGroup>
         </div>
         <div className="row">
-          <div className="col-4 text-end">
+          <div className="col-3 col-md-4 text-end">
             <FormLabel className="text-end">성함</FormLabel>
           </div>
-          <div className="col-5 col-lg-3 col-md-4 col-sm-5">
+          <div className="col-7 col-md-5 col-sm-7">
             <input type="text" name="name" className="form-control"/>
           </div>
         </div>
         <div className="row">
-          <div className="col-4 text-end">
+          <div className="col-3 col-md-4 text-end">
             <FormLabel className="text-end">참석인원</FormLabel>
           </div>
-          <div className="col-5 col-lg-3 col-md-4 col-sm-5">
+          <div className="col-7 col-md-5 col-sm-7">
             <input type="text" name="people-cnt" className="form-control"/>
           </div>
         </div>
         <div className="row">
-          <div className="col-4 text-end">
+          <div className="col-3 col-md-4 text-end">
             <FormLabel className="text-end">동행인</FormLabel>
           </div>
-          <div className="col-5 col-lg-3 col-md-4 col-sm-5">
+          <div className="col-7 col-md-5 col-sm-7">
             <input type="text" name="come-with-people" className="form-control"/>
           </div>
         </div>
         <div className="row">
-          <div className="col-4 text-end">
+          <div className="col-3 col-md-4 text-end">
             <FormLabel id="eat-yn-label" className="text-end">식사여부</FormLabel>
           </div>
-          <div className="col-5 col-lg-3 col-md-4 col-sm-5">
+          <div className="col-7 col-md-5 col-sm-7">
             <div className="btn-group w-100" role="group" aria-label="eat-yn-label" onChange={handleEatYnChange}>
               <input type="radio" className="btn-check" name="eat-yn" id="btnradio1" autoComplete="off" value="Y" defaultChecked={true} />
               <label className="btn btn-outline-secondary" htmlFor="btnradio1">예정</label>
@@ -74,7 +74,7 @@ export default function AttendanceModal() {
           </div>
         </div>
         <div className="row justify-content-center mt-4">
-          <button type="button" className="btn btn-lg btn-dark w-75 fs-4">전달하기</button>
+          <button type="button" className="btn btn-lg btn-primary w-75 fs-4">전달하기</button>
         </div>
       </form>
     </div>
