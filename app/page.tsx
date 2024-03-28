@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faMessage } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMessage, faPhone} from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/ui/ImageSlider";
 import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/ui/CalendarWrapper";
-import NaverMap from "@/app/ui/NaverMap";
+import NaverMap from "@/app/ui/component/NaverMap";
 
-const VideoPlayer = dynamic(() => import("@/app/ui/VideoPlayer"), { ssr: false });
+const VideoPlayer = dynamic(() => import("@/app/ui/component/VideoPlayer"), { ssr: false });
 
 export default function Home() {
   return (

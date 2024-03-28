@@ -13,8 +13,8 @@ export default function MuiDateCalendar() {
       <Suspense fallback={<DayCalendarSkeleton />}>
         <DateCalendar
           className={"calendar"}
+          views={['day']}
           defaultValue={weddingMomment}
-          renderLoading={() => <DayCalendarSkeleton />}
           readOnly />
       </Suspense>
     </LocalizationProvider>
