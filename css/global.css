@@ -42,7 +42,7 @@ main {
 
         .MuiButtonBase-root {
           padding: 6px !important;
-          font-family: 'Pretendard' !important;
+          font-family: 'NotoSansKR' !important;
         }
 
         .Mui-selected {
@@ -56,7 +56,7 @@ main {
     }
 
     .MuiFormControlLabel-label {
-      font-family: 'Pretendard' !important;
+      font-family: 'NotoSansKR' !important;
     }
   }
 }

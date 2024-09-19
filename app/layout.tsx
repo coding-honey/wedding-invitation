@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="pretendard text-center">{children}</body>
+      <body className="text-center">{children}</body>
     </html>
   );
 }

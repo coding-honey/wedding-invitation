@@ -1,16 +1,15 @@
+
 @font-face {
-  font-family: 'Pretendard';
+  font-family: 'NotoSansKR';
   font-weight: 400;
   font-display: swap;
-  src: local('Pretendard Regular')
-    , url(./ext/Pretendard-Regular.woff2) format('woff2')
-    , url(./ext/Pretendard-Regular.woff) format('woff')
-    , url(./ext/Pretendard-Regular.otf) format('otf')
+  src: local('NotoSansKR Regular')
+    , url(./ext/NotoSansKR-Regular.ttf) format('ttf')
   ;
 }
 
-.pretendard {
-  font-family: 'Pretendard' !important;
+body {
+  font-family: 'NotoSansKR' !important;
 }
 
 @media (max-width: 576px) {
