@@ -6,6 +6,9 @@ import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/ui/CalendarWrapper";
 import NaverMap from "@/app/ui/component/NaverMap";
 import AttendanceModal from "@/app/ui/AttendanceModal";
+import main1Image from "@/public/Image/main1.png";
+import main2Image from "@/public/Image/main2.png";
+import main3Image from "@/public/Image/main3.png";
 
 const VideoPlayer = dynamic(() => import("@/app/ui/component/VideoPlayer"), { ssr: false });
 
@@ -20,7 +23,7 @@ export default function Home() {
       <section>
         <Image
           className="img-fluid"
-          src="/main1.png"
+          src={main1Image}
           width={430}
           height={645}
           alt="main picture 1">
@@ -40,7 +43,7 @@ export default function Home() {
       <section>
         <Image
           className="img-fluid"
-          src="/main2.png"
+          src={main2Image}
           width={429}
           height={430}
           alt="main picture 2">
@@ -179,7 +182,7 @@ export default function Home() {
       <section>
         <Image
           className="img-fluid"
-          src="/main3.png"
+          src={main3Image}
           width={439}
           height={645}
           alt="main picture 3">

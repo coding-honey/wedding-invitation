@@ -2,6 +2,9 @@ import Image from "next/image";
 import MuiDateCalendar from "@/app/ui/component/MuiDateCalendar";
 import moment from "moment";
 import 'moment/locale/ko';
+import manIconImage from "@/public/Image/man-icon.png";
+import loveIconImage from "@/public/Image/love-icon.png";
+import girlIconImage from "@/public/Image/girl-icon.png";
 
 export default function CalendarWrapper() {
   const weddingMomment = moment("2025-01-11");
@@ -18,18 +21,18 @@ export default function CalendarWrapper() {
       </div>
       <div className="d-flex justify-content-center mb-3">
         <Image
-          src="/man-icon.png"
+          src={manIconImage}
           width={24}
           height={24}
           alt="man icon" />
         <Image
           className="mx-2"
-          src="/love-icon.png"
+          src={loveIconImage}
           width={24}
           height={24}
           alt="heart icon" />
         <Image
-          src="/girl-icon.png"
+          src={girlIconImage}
           width={24}
           height={24}
           alt="girl icon" />
