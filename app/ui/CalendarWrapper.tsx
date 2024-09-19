@@ -9,10 +9,7 @@ import girlIconImage from "@/public/Image/girl-icon.png";
 export default function CalendarWrapper() {
   const weddingMomment = moment("2025-01-11");
   const today = moment();
-  const afterDay = moment("2026-01-01");
   const diffDays = weddingMomment.diff(today, "days");
-  const diffEquals = weddingMomment.diff(weddingMomment, "days")
-  const diffAfter = weddingMomment.diff(afterDay, "days")
 
   return (
     <>
@@ -38,8 +35,6 @@ export default function CalendarWrapper() {
           alt="girl icon" />
       </div>
       <CalendarDesc days={diffDays} />
-      <CalendarDesc days={diffEquals} />
-      <CalendarDesc days={diffAfter} />
     </>
   );
 }
