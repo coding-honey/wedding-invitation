@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "next build && next start"
+    "dev": "source ~/.nvm/nvm.sh && nvm use && next dev",
+    "build": "source ~/.nvm/nvm.sh && nvm use && next build",
+    "start": "source ~/.nvm/nvm.sh && nvm use && next start",
+    "lint": "source ~/.nvm/nvm.sh && nvm use && next lint",
+    "test": "source ~/.nvm/nvm.sh && nvm use && next build && next start"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
