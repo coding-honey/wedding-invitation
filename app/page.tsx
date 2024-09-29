@@ -1,26 +1,26 @@
 import Image from "next/image";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMessage, faPhone} from "@fortawesome/free-solid-svg-icons";
-import ImageSlider from "@/app/ui/ImageSlider";
+import ImageSlider from "@/app/_component/ImageSlider";
 import dynamic from "next/dynamic";
-import CalendarWrapper from "@/app/ui/CalendarWrapper";
-import NaverMap from "@/app/ui/component/NaverMap";
-import AttendanceModal from "@/app/ui/AttendanceModal";
+import CalendarWrapper from "@/app/_component/calendar/CalendarWrapper";
+import NaverMap from "@/app/_component/NaverMap";
+import AttendanceModal from "@/app/_component/AttendanceModal";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
 
-const VideoPlayer = dynamic(() => import("@/app/ui/component/VideoPlayer"), { ssr: false });
+const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), { ssr: false });
 
 export default function Home() {
   return (
-    <main className="container">
-      <section>
+    <div className="container main p-4">
+      <div className="section">
         <div className="fs-1">정동헌 & 박선영</div>
         <div className="fs-2 fw-bold mb-0">2025년 1월 11일 토요일 오후 12시 30분</div>
         <div className="fs-2 fw-bold">트라디노이 하우스웨딩홀</div>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <Image
           className="img-fluid"
           src={main1Image}
@@ -28,8 +28,8 @@ export default function Home() {
           height={645}
           alt="main picture 1">
         </Image>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <div className="row fs-4">
           <span>따스한 봄에 만난 사람과</span>
           <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
@@ -39,8 +39,8 @@ export default function Home() {
           <span>귀한 걸음 하시어 축복과 격려 주시면</span>
           <span>더없는 기쁨으로 간직하겠습니다.</span>
         </div>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <Image
           className="img-fluid"
           src={main2Image}
@@ -48,7 +48,7 @@ export default function Home() {
           height={430}
           alt="main picture 2">
         </Image>
-      </section>
+      </div>
       <section className="fs-4 mx-4">
         <div className="row mb-0">
           <div className="col text-end">
@@ -142,26 +142,26 @@ export default function Home() {
         <div className="fs-2 fw-bold">Album</div>
         <ImageSlider/>
       </section>
-      <section>
+      <div className="section">
         <div className="fs-2 fw-bold">Video</div>
         <div className="d-flex justify-content-center">
           <VideoPlayer/>
         </div>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <CalendarWrapper/>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <div className="fs-2 fw-bold">오시는 길</div>
         <div>
           <span className="fs-4">트라디노이</span>
           <br/>
           <span className="fs-4">서울 강남구 도곡로99길 16 6층</span>
         </div>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <NaverMap />
-      </section>
+      </div>
       <section className="text-start mx-5">
         <div className="fs-2 fw-bold">지하철</div>
         <div>
@@ -179,7 +179,7 @@ export default function Home() {
           <div className="fs-4">주소: 서울 강남구 영동대로65길 24 대치2동주민센터</div>
         </div>
       </section>
-      <section>
+      <div className="section">
         <Image
           className="img-fluid"
           src={main3Image}
@@ -187,8 +187,8 @@ export default function Home() {
           height={645}
           alt="main picture 3">
         </Image>
-      </section>
-      <section>
+      </div>
+      <div className="section">
         <div className="fs-2 fw-bold">참석 의사 전달</div>
         <div className="fs-4">
           <div>축하의 마음으로 참석해주시는</div>
@@ -196,10 +196,10 @@ export default function Home() {
           <div>참석 의사를 전달 부탁드립니다.</div>
         </div>
         <button type="button" className="btn btn-lg btn-dark w-75 fs-4">참석 의사 전달하기</button>
-      </section>
-      <section className="border">
+      </div>
+      <div className="section border">
         <AttendanceModal />
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

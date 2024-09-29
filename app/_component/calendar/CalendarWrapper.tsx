@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MuiDateCalendar from "@/app/ui/component/MuiDateCalendar";
+import MuiDateCalendar from "@/app/_component/calendar/MuiDateCalendar";
 import moment from "moment";
 import 'moment/locale/ko';
 import manIconImage from "@/public/Image/man-icon.png";

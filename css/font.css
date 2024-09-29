@@ -1,39 +1,35 @@
-
 @font-face {
-  font-family: 'NotoSansKR';
-  font-weight: 400;
-  font-display: swap;
-  src: local('NotoSansKR Regular')
-    , url(./ext/NotoSansKR-Regular.ttf) format('ttf')
-  ;
+    font-family: 'NotoSansKR';
+    font-weight: 400;
+    font-display: swap;
+    src: local('NotoSansKR Regular'), url(./ext/NotoSansKR-Regular.ttf) format('ttf')
+;
 }
 
 body {
-  font-family: 'NotoSansKR' !important;
+    font-family: 'NotoSansKR' !important;
 }
 
-@media (max-width: 576px) {
-  .fs-1 {
-    font-size: calc(1.175rem + 1.5vw) !important;
-  }
+.fs-1 {
+    font-size: calc(0.825rem + 1.5vw) !important;
+}
 
-  .fs-2 {
-    font-size: calc(1.125rem + 0.9vw) !important;
-  }
+.fs-2 {
+    font-size: calc(0.795rem + 0.9vw) !important;
+}
 
-  .fs-3 {
-    font-size: calc(1.1rem + 0.6vw) !important;
-  }
+.fs-3 {
+    font-size: calc(0.78rem + 0.6vw) !important;
+}
 
-  .fs-4 {
-    font-size: calc(1.075rem + 0.3vw) !important;
-  }
+.fs-4 {
+    font-size: calc(0.765rem + 0.3vw) !important;
+}
 
-  .fs-5 {
-    font-size: 1.05rem !important;
-  }
+.fs-5 {
+    font-size: 0.75rem !important;
+}
 
-  .fs-6 {
-    font-size: 0.7rem !important;
-  }
+.fs-6 {
+    font-size: 0.rem !important;
 }

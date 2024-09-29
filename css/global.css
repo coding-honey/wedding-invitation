@@ -3,16 +3,27 @@
 @import "./font.css";
 @import "./form.css";
 
-main {
-  > section {
+body {
+  background-color: #27272A;
+}
+div.main {
+  @media (min-width: 640px) {
+    max-width: 26rem;
+  }
+  background-color: white;
+  > div.section {
     margin-bottom: 3rem !important;
 
     &:first-child {
-      margin-top: 3rem !important;
+      margin-top: 1rem !important;
+    }
+
+    &:last-child {
+      margin-top: 1rem !important;
     }
 
     > div {
-      margin-bottom: 2rem !important;
+      margin-bottom: 2rem;
     }
 
     .img-fluid {
