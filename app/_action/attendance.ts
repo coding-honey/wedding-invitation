@@ -6,10 +6,10 @@ import AttendanceC from "@/types/attendance";
 async function getCollection() {
   const client = await clientPromise;
   const db = client.db("wedding-invitation");
-  return db.collection("attendance");
+  return db.collection<AttendanceC>("attendance");
 }
 
-export async function createAttendance(attendance:AttendanceC) {
+export async function createAttendance(attendance: AttendanceC) {
   const collection = await getCollection();
   return collection.insertOne(attendance);
 }

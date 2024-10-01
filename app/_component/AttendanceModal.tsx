@@ -1,7 +1,7 @@
 "use client";
 
-import {FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
-import {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
+import {FormLabel} from "@mui/material";
+import {ChangeEvent, FormEvent, useState} from "react";
 import {createAttendance} from "@/app/_action/attendance";
 import AttendanceC, {DEFAULT_ATTENDANCE} from "@/types/attendance";
 
@@ -34,7 +34,7 @@ export default function AttendanceModal() {
       const result = await createAttendance({...attendance});
       if (result.acknowledged) {
         alert("저장되었습니다.");
-        location.reload();
+        setAttendance(new AttendanceC());
       } else {
         alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
       }
