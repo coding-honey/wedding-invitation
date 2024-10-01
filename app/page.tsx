@@ -9,8 +9,7 @@ import AttendanceModal from "@/app/_component/AttendanceModal";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
-import CommentForm from "@/app/_component/comment/CommentForm";
-import CommentsWrapper from "@/app/_component/comment/CommentsWrapper";
+import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
@@ -55,26 +54,28 @@ export default function Home() {
         </Image>
       </div>
       <div className="section">
-        <div className="row">
-          <div className="col text-end">
-            <span>정석순</span>
-            <span className="mx-2"></span>
-            <span>김형순</span>
+        <div>
+          <div className="row">
+            <div className="col text-end">
+              <span>정석순</span>
+              <span className="mx-2"></span>
+              <span>김형순</span>
+            </div>
+            <div className="col text-start">
+              <span className="fs-6">장남</span>
+              <span className="mx-2"></span>
+              <span>정동헌</span>
+            </div>
           </div>
-          <div className="col text-start">
-            <span className="fs-6">장남</span>
-            <span className="mx-2"></span>
-            <span>정동헌</span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col text-end">
-            <span>김남희</span>
-          </div>
-          <div className="col text-start">
-            <span className="fs-6">장녀</span>
-            <span className="mx-2"></span>
-            <span>박선영</span>
+          <div className="row">
+            <div className="col text-end">
+              <span>김남희</span>
+            </div>
+            <div className="col text-start">
+              <span className="fs-6">장녀</span>
+              <span className="mx-2"></span>
+              <span>박선영</span>
+            </div>
           </div>
         </div>
         {/* TODO 혼주에게 연락하기 Modal 로 변환 */}
@@ -147,7 +148,7 @@ export default function Home() {
         <ImageSlider/>
       </div>
       <div className="section">
-        <div className="fs-3 fw-bold">Video</div>
+        <p className="fs-3 fw-bold">Video</p>
         <div className="d-flex justify-content-center">
           <VideoPlayer/>
         </div>
@@ -177,7 +178,7 @@ export default function Home() {
         <p className="fs-4 fw-bold">주차정보</p>
         <p>
           * 대치2동문화센터 공영주차장입구<br/>
-          주소: 서울 강남구 영동대로65길 24 대치2동주민센터
+          주소: 서울 강남구 영동대로65길 24
         </p>
       </div>
       <div className="section">
@@ -213,12 +214,7 @@ export default function Home() {
         <button type="button" className="btn btn-lg btn-dark w-75 mb-4">신랑측 계좌번호</button>
         <button type="button" className="btn btn-lg btn-dark w-75">신부측 계좌번호</button>
       </div>
-      <div className="section">
-        <CommentForm/>
-      </div>
-      <div className="section">
-        <CommentsWrapper/>
-      </div>
+      <CommentWrapper/>
       <span className="text-body-tertiary">Copyright 2025. Honeyrenda. All rights reserved.</span>
     </div>
   );

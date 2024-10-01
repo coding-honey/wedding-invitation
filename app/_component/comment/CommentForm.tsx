@@ -1,13 +1,13 @@
 "use client";
 
-import {FormControlLabel, FormLabel, Radio, RadioGroup, TextField} from "@mui/material";
-import {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
-import {createAttendance} from "@/app/_action/attendance";
-import AttendanceC, {DEFAULT_ATTENDANCE} from "@/types/attendance";
+import {TextField} from "@mui/material";
+import {ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from "react";
 import CommentC from "@/types/comment";
-import {createComment} from "@/app/_action/comment";
+import {createComment, findAllComment} from "@/app/_action/comment";
 
-export default function CommentForm() {
+export default function CommentForm({setComments}: {
+  setComments: Dispatch<SetStateAction<CommentC[]>>
+}) {
   const [comment, setComment] = useState<CommentC>(new CommentC());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +28,7 @@ export default function CommentForm() {
       if (result.acknowledged) {
         alert("저장되었습니다.");
         setComment(new CommentC());
+        setComments((await findAllComment()) as CommentC[]);
       } else {
         alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
       }

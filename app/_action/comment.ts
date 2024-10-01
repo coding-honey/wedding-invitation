@@ -3,6 +3,7 @@
 import clientPromise from "@/lib/mongodb";
 import CommentC from "@/types/comment";
 import moment from "moment";
+import 'moment/locale/ko';
 
 async function getCollection() {
   const client = await clientPromise;
@@ -17,5 +18,11 @@ export async function createComment(comment: Omit<CommentC, '_id'>) {
 
 export async function findAllComment() {
   const collection = await getCollection();
-  return await collection.find().toArray();
+  const rows = await collection.find().toArray();
+  return rows.map((row) => {
+    return {
+      ...row,
+      _id: row._id.toString(),
+    };
+  });
 }

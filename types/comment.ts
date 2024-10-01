@@ -1,7 +1,5 @@
-import {ObjectId} from "mongodb";
-
 export default class CommentC {
-  _id?: ObjectId;
+  _id?: string;
   name: string = '';
   content: string = '';
   createdAt?: string;
