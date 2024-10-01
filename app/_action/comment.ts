@@ -18,7 +18,9 @@ export async function createComment(comment: Omit<CommentC, '_id'>) {
 
 export async function findAllComment() {
   const collection = await getCollection();
-  const rows = await collection.find().toArray();
+  const rows = await collection.find().sort({
+    createdAt: -1
+  }).toArray();
   return rows.map((row) => {
     return {
       ...row,
