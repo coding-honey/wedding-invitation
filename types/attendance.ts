@@ -1,5 +1,3 @@
-
-
 export default class AttendanceC {
   sectionCd: string = 'groom';
   name: string = '';

@@ -26,9 +26,21 @@ export default function AttendanceModal() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const result = await createAttendance(attendance);
-    if (result.acknowledged) {
-
+    try {
+      /*
+      Server Action 에 Class or null 은 전달할 수 없음.
+      구조 분해 할당을 통해 객체 속성만 전달 // {...attendance}
+       */
+      const result = await createAttendance({...attendance});
+      if (result.acknowledged) {
+        alert("저장되었습니다.");
+        location.reload();
+      } else {
+        alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
+      }
+    } catch (e) {
+      console.error(e);
+      alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
     }
   }
 
