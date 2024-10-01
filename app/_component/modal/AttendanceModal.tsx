@@ -68,12 +68,12 @@ export default function AttendanceModal() {
               <div className="btn-group w-100" role="group" aria-label="sectionCd"
                    onChange={handleChange}>
                 <input type="radio" className="btn-check" name="sectionCd" id="sectionCdBtn1" autoComplete="off"
-                       value="Y"
+                       value="groom"
                        defaultChecked={attendance.sectionCd == "groom"}/>
                 <label className="btn btn-outline-secondary" htmlFor="sectionCdBtn1">신랑측</label>
 
                 <input type="radio" className="btn-check" name="sectionCd" id="sectionCdBtn2" autoComplete="off"
-                       value="N"
+                       value="bride"
                        defaultChecked={attendance.sectionCd == "bride"}/>
                 <label className="btn btn-outline-secondary" htmlFor="sectionCdBtn2">신부측</label>
               </div>
