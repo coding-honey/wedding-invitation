@@ -1,7 +1,6 @@
 import Image from "next/image";
 import MuiDateCalendar from "@/app/_component/calendar/MuiDateCalendar";
-import moment from "moment";
-import 'moment/locale/ko';
+import moment from "@/lib/moment";
 import manIconImage from "@/public/Image/man-icon.png";
 import loveIconImage from "@/public/Image/love-icon.png";
 import girlIconImage from "@/public/Image/girl-icon.png";

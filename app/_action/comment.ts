@@ -2,8 +2,7 @@
 
 import clientPromise from "@/lib/mongodb";
 import CommentC from "@/types/comment";
-import moment from "moment";
-import 'moment/locale/ko';
+import moment from "@/lib/moment";
 
 async function getCollection() {
   const client = await clientPromise;
@@ -13,7 +12,11 @@ async function getCollection() {
 
 export async function createComment(comment: Omit<CommentC, '_id'>) {
   const collection = await getCollection();
-  return collection.insertOne({...comment, createdAt: moment().format("YYYY-MM-DD HH:mm:ss")});
+  const result = await collection.insertOne({
+    ...comment,
+    createdAt: moment().format("YYYY-MM-DD HH:mm:ss")
+  });
+  return {...result, insertedId: result.insertedId.toString()}
 }
 
 export async function findAllComment() {
