@@ -3,12 +3,17 @@
 @import "./font.css";
 @import "./form.css";
 
+html {
+  font-size: 14px;
+}
+
 body {
   background-color: #27272A;
 }
-div.main {
-  @media (min-width: 640px) {
-    max-width: 26rem;
+
+.container-fluid {
+  @media (min-width: 480px) {
+    max-width: 450px;
   }
   background-color: white;
   > div.section {
@@ -22,8 +27,12 @@ div.main {
       margin-top: 1rem !important;
     }
 
-    > div {
+    > p {
       margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     .img-fluid {

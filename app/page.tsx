@@ -9,16 +9,19 @@ import AttendanceModal from "@/app/_component/AttendanceModal";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
+import {TextField} from "@mui/material";
 
-const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), { ssr: false });
+const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
 export default function Home() {
   return (
-    <div className="container main p-4">
+    <div className="container-fluid main p-4">
       <div className="section">
-        <div className="fs-1">정동헌 & 박선영</div>
-        <div className="fs-2 fw-bold mb-0">2025년 1월 11일 토요일 오후 12시 30분</div>
-        <div className="fs-2 fw-bold">트라디노이 하우스웨딩홀</div>
+        <p className="fs-3">정동헌 & 박선영</p>
+        <p className="fs-4 fw-bold">
+          2025년 1월 11일 토요일 오후 12시 30분<br/>
+          트라디노이 하우스웨딩홀
+        </p>
       </div>
       <div className="section">
         <Image
@@ -30,15 +33,16 @@ export default function Home() {
         </Image>
       </div>
       <div className="section">
-        <div className="row fs-4">
-          <span>따스한 봄에 만난 사람과</span>
-          <span>하얗게 눈이 덮인 계절에 결혼합니다.</span>
-          <span>평생 서로에게 단짝이 되어줄</span>
-          <span>저희의 첫날에 초대합니다.</span>
-          <br/><br/>
-          <span>귀한 걸음 하시어 축복과 격려 주시면</span>
-          <span>더없는 기쁨으로 간직하겠습니다.</span>
-        </div>
+        <p>
+          따스한 봄에 만난 사람과<br/>
+          하얗게 눈이 덮인 계절에 결혼합니다.<br/>
+          평생 서로에게 단짝이 되어줄<br/>
+          저희의 첫날에 초대합니다.<br/>
+        </p>
+        <p>
+          귀한 걸음 하시어 축복과 격려 주시면<br/>
+          더없는 기쁨으로 간직하겠습니다.
+        </p>
       </div>
       <div className="section">
         <Image
@@ -49,8 +53,8 @@ export default function Home() {
           alt="main picture 2">
         </Image>
       </div>
-      <section className="fs-4 mx-4">
-        <div className="row mb-0">
+      <div className="section">
+        <div className="row">
           <div className="col text-end">
             <span>정석순</span>
             <span className="mx-2"></span>
@@ -72,11 +76,9 @@ export default function Home() {
             <span>박선영</span>
           </div>
         </div>
-      </section>
-      <section className="row justify-content-center">
-        <button type="button" className="btn btn-lg btn-dark w-75 fs-4">혼주에게 연락하기</button>
-      </section>
-      <section className="border">
+        <button type="button" className="btn btn-lg btn-dark w-75">혼주에게 연락하기</button>
+      </div>
+      <div className="section border">
         <div className="row mb-1 align-items-center">
           <div className="col-5 text-end">신랑</div>
           <div className="col-3">정동헌</div>
@@ -137,13 +139,13 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
-      <section className="pt-5">
-        <div className="fs-2 fw-bold">Album</div>
-        <ImageSlider/>
-      </section>
+      </div>
       <div className="section">
-        <div className="fs-2 fw-bold">Video</div>
+        <div className="fs-3 fw-bold">Album</div>
+        <ImageSlider/>
+      </div>
+      <div className="section">
+        <div className="fs-3 fw-bold">Video</div>
         <div className="d-flex justify-content-center">
           <VideoPlayer/>
         </div>
@@ -152,33 +154,32 @@ export default function Home() {
         <CalendarWrapper/>
       </div>
       <div className="section">
-        <div className="fs-2 fw-bold">오시는 길</div>
-        <div>
-          <span className="fs-4">트라디노이</span>
-          <br/>
-          <span className="fs-4">서울 강남구 도곡로99길 16 6층</span>
-        </div>
+        <p className="fs-3 fw-bold">오시는 길</p>
+        <p>
+          트라디노이<br/>
+          서울 강남구 도곡로99길 16 6층
+        </p>
       </div>
       <div className="section">
-        <NaverMap />
+        <NaverMap/>
       </div>
-      <section className="text-start mx-5">
-        <div className="fs-2 fw-bold">지하철</div>
-        <div>
-          <div className="fs-4">[2호선] 삼성역 3번출구 도보 14분</div>
-          <div className="fs-4">[3호선] 학여울역 1번출구 도보 14분</div>
-        </div>
-        <div className="fs-2 fw-bold">버스</div>
-        <div>
-          <div className="fs-4">마을버스 강남 01, 강남 06</div>
-          <div className="fs-4">401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917</div>
-        </div>
-        <div className="fs-2 fw-bold">주차정보</div>
-        <div>
-          <div className="fs-4">* 대치2동문화센터 공영주차장입구</div>
-          <div className="fs-4">주소: 서울 강남구 영동대로65길 24 대치2동주민센터</div>
-        </div>
-      </section>
+      <div className="section text-start fs-5 mx-5">
+        <p className="fs-4 fw-bold">지하철</p>
+        <p className="fs-6">
+          [2호선] 삼성역 3번출구 도보 14분<br/>
+          [3호선] 학여울역 1번출구 도보 14분
+        </p>
+        <p className="fs-4 fw-bold">버스</p>
+        <p className="fs-6">
+          마을버스 강남 01, 강남 06<br/>
+          401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917
+        </p>
+        <p className="fs-4 fw-bold">주차정보</p>
+        <p className="fs-6">
+          * 대치2동문화센터 공영주차장입구<br/>
+          주소: 서울 강남구 영동대로65길 24 대치2동주민센터
+        </p>
+      </div>
       <div className="section">
         <Image
           className="img-fluid"
@@ -189,13 +190,13 @@ export default function Home() {
         </Image>
       </div>
       <div className="section">
-        <div className="fs-2 fw-bold">참석 의사 전달</div>
-        <div className="fs-4">
-          <div>축하의 마음으로 참석해주시는</div>
-          <div>모든 분들을 귀하게 모실 수 있도록</div>
-          <div>참석 의사를 전달 부탁드립니다.</div>
-        </div>
-        <button type="button" className="btn btn-lg btn-dark w-75 fs-4">참석 의사 전달하기</button>
+        <p className="fs-3 fw-bold">참석 의사 전달</p>
+        <p>
+          축하의 마음으로 참석해주시는<br/>
+          모든 분들을 귀하게 모실 수 있도록<br/>
+          참석 의사를 전달 부탁드립니다.
+        </p>
+        <button type="button" className="btn btn-lg btn-dark w-75">참석 의사 전달하기</button>
       </div>
       <div className="section border">
         <AttendanceModal />

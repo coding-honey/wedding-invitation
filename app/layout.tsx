@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="text-center">{children}</body>
+    <html lang="ko">
+      <body className="fs-4 text-center">{children}</body>
     </html>
   );
 }
