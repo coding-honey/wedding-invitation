@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@/css/global.css";
 import { config } from '@fortawesome/fontawesome-svg-core';
+import 'moment/locale/ko';
+
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -21,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="fs-4 text-center">{children}</body>
+      <body className="fs-5 text-center">{children}</body>
     </html>
   );
 }

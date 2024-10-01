@@ -9,7 +9,8 @@ import AttendanceModal from "@/app/_component/AttendanceModal";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
-import {TextField} from "@mui/material";
+import CommentForm from "@/app/_component/comment/CommentForm";
+import CommentsWrapper from "@/app/_component/comment/CommentsWrapper";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
@@ -76,6 +77,7 @@ export default function Home() {
             <span>박선영</span>
           </div>
         </div>
+        {/* TODO 혼주에게 연락하기 Modal 로 변환 */}
         <button type="button" className="btn btn-lg btn-dark w-75">혼주에게 연락하기</button>
       </div>
       <div className="section border">
@@ -159,23 +161,21 @@ export default function Home() {
           트라디노이<br/>
           서울 강남구 도곡로99길 16 6층
         </p>
-      </div>
-      <div className="section">
         <NaverMap/>
       </div>
-      <div className="section text-start fs-5 mx-5">
+      <div className="section text-start mx-4">
         <p className="fs-4 fw-bold">지하철</p>
-        <p className="fs-6">
+        <p>
           [2호선] 삼성역 3번출구 도보 14분<br/>
           [3호선] 학여울역 1번출구 도보 14분
         </p>
         <p className="fs-4 fw-bold">버스</p>
-        <p className="fs-6">
+        <p>
           마을버스 강남 01, 강남 06<br/>
           401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917
         </p>
         <p className="fs-4 fw-bold">주차정보</p>
-        <p className="fs-6">
+        <p>
           * 대치2동문화센터 공영주차장입구<br/>
           주소: 서울 강남구 영동대로65길 24 대치2동주민센터
         </p>
@@ -199,7 +199,8 @@ export default function Home() {
         <button type="button" className="btn btn-lg btn-dark w-75">참석 의사 전달하기</button>
       </div>
       <div className="section border">
-        <AttendanceModal />
+        {/* TODO 참석 의사 전달 Modal 로 변환 */}
+        <AttendanceModal/>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">마음 전하실 곳</p>
@@ -212,6 +213,13 @@ export default function Home() {
         <button type="button" className="btn btn-lg btn-dark w-75 mb-4">신랑측 계좌번호</button>
         <button type="button" className="btn btn-lg btn-dark w-75">신부측 계좌번호</button>
       </div>
+      <div className="section">
+        <CommentForm/>
+      </div>
+      <div className="section">
+        <CommentsWrapper/>
+      </div>
+      <span className="text-body-tertiary">Copyright 2025. Honeyrenda. All rights reserved.</span>
     </div>
   );
 }
