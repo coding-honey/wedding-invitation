@@ -1,6 +1,4 @@
 import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMessage, faPhone} from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from "@/app/_component/ImageSlider";
 import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/_component/calendar/CalendarWrapper";
@@ -10,6 +8,7 @@ import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
+import ContactModal from "@/app/_component/modal/ContactModal";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
@@ -76,70 +75,7 @@ export default function Home() {
             <span>박선영</span>
           </div>
         </div>
-        {/* TODO 혼주에게 연락하기 Modal 로 변환 */}
-        <button type="button" className="btn btn-lg btn-dark w-75 mt-4">혼주에게 연락하기</button>
-      </div>
-      <div className="section border">
-        <div className="row mb-1 align-items-center">
-          <div className="col-5 text-end">신랑</div>
-          <div className="col-3">정동헌</div>
-          <div className="col-4 d-flex justify-content-start align-items-center">
-            <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
-            </a>
-            <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faMessage}/>
-            </a>
-          </div>
-        </div>
-        <div className="row mb-1 align-items-center">
-          <div className="col-5 text-end">신랑 아버지</div>
-          <div className="col-3">정석순</div>
-          <div className="col-4 d-flex justify-content-start align-items-center">
-            <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
-            </a>
-            <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faMessage}/>
-            </a>
-          </div>
-        </div>
-        <div className="row mb-1 mb-3 align-items-center">
-          <div className="col-5 text-end">신랑 어머니</div>
-          <div className="col-3">김형순</div>
-          <div className="col-4 d-flex justify-content-start align-items-center">
-            <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
-            </a>
-            <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faMessage}/>
-            </a>
-          </div>
-        </div>
-        <div className="row mb-1 align-items-center">
-          <div className="col-5 text-end">신부</div>
-          <div className="col-3">박선영</div>
-          <div className="col-4 d-flex justify-content-start align-items-center">
-            <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
-            </a>
-            <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faMessage}/>
-            </a>
-          </div>
-        </div>
-        <div className="row mb-1 align-items-center">
-          <div className="col-5 text-end">신부 어머니</div>
-          <div className="col-3">김남희</div>
-          <div className="col-4 d-flex justify-content-start align-items-center">
-            <a className="tel" href="tel:01076715530">
-              <FontAwesomeIcon icon={faPhone} className="me-3"/>
-            </a>
-            <a className="sms" href="sms:01076715530">
-              <FontAwesomeIcon icon={faMessage}/>
-            </a>
-          </div>
-        </div>
+        <ContactModal/>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">Album</p>
