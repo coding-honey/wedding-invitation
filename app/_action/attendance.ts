@@ -11,5 +11,6 @@ async function getCollection() {
 
 export async function createAttendance(attendance: AttendanceC) {
   const collection = await getCollection();
-  return collection.insertOne(attendance);
+  const result = await collection.insertOne(attendance);
+  return {...result, insertedId: result.insertedId.toString()}
 }

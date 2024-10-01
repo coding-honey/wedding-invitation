@@ -2,6 +2,7 @@
 @import "@fortawesome/fontawesome-svg-core/styles.css";
 @import "./font.css";
 @import "./form.css";
+@import "./modal.css";
 
 html {
     font-size: 14px;
@@ -15,6 +16,8 @@ body {
     @media (min-width: 480px) {
         max-width: 450px;
     }
+
+    padding: 1.5rem;
     background-color: white;
 
     > div.section {
@@ -28,7 +31,7 @@ body {
             margin-top: 1rem !important;
         }
 
-        > p, div {
+        > p {
             margin-bottom: 2rem;
 
             &:last-child {
@@ -37,7 +40,7 @@ body {
         }
 
         .img-fluid {
-            width: 90% !important;
+            width: 80% !important;
             height: 100% !important;
         }
 

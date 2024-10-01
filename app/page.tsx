@@ -5,7 +5,7 @@ import ImageSlider from "@/app/_component/ImageSlider";
 import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/_component/calendar/CalendarWrapper";
 import NaverMap from "@/app/_component/NaverMap";
-import AttendanceModal from "@/app/_component/AttendanceModal";
+import AttendanceModal from "@/app/_component/modal/AttendanceModal";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
@@ -15,12 +15,12 @@ const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: 
 
 export default function Home() {
   return (
-    <div className="container-fluid main p-4">
+    <div className="container-fluid">
       <div className="section">
         <p className="fs-3">정동헌 & 박선영</p>
         <p className="fs-4 fw-bold">
           2025년 1월 11일 토요일 오후 12시 30분<br/>
-          트라디노이 하우스웨딩홀
+          트라디노이 6층 하우스웨딩홀
         </p>
       </div>
       <div className="section">
@@ -54,32 +54,30 @@ export default function Home() {
         </Image>
       </div>
       <div className="section">
-        <div>
-          <div className="row">
-            <div className="col text-end">
-              <span>정석순</span>
-              <span className="mx-2"></span>
-              <span>김형순</span>
-            </div>
-            <div className="col text-start">
-              <span className="fs-6">장남</span>
-              <span className="mx-2"></span>
-              <span>정동헌</span>
-            </div>
+        <div className="row">
+          <div className="col text-end">
+            <span>정석순</span>
+            <span className="mx-2"></span>
+            <span>김형순</span>
           </div>
-          <div className="row">
-            <div className="col text-end">
-              <span>김남희</span>
-            </div>
-            <div className="col text-start">
-              <span className="fs-6">장녀</span>
-              <span className="mx-2"></span>
-              <span>박선영</span>
-            </div>
+          <div className="col text-start">
+            <span className="fs-6">장남</span>
+            <span className="mx-2"></span>
+            <span>정동헌</span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col text-end">
+            <span>김남희</span>
+          </div>
+          <div className="col text-start">
+            <span className="fs-6">장녀</span>
+            <span className="mx-2"></span>
+            <span>박선영</span>
           </div>
         </div>
         {/* TODO 혼주에게 연락하기 Modal 로 변환 */}
-        <button type="button" className="btn btn-lg btn-dark w-75">혼주에게 연락하기</button>
+        <button type="button" className="btn btn-lg btn-dark w-75 mt-4">혼주에게 연락하기</button>
       </div>
       <div className="section border">
         <div className="row mb-1 align-items-center">
@@ -144,7 +142,7 @@ export default function Home() {
         </div>
       </div>
       <div className="section">
-        <div className="fs-3 fw-bold">Album</div>
+        <p className="fs-3 fw-bold">Album</p>
         <ImageSlider/>
       </div>
       <div className="section">
@@ -159,8 +157,8 @@ export default function Home() {
       <div className="section">
         <p className="fs-3 fw-bold">오시는 길</p>
         <p>
-          트라디노이<br/>
-          서울 강남구 도곡로99길 16 6층
+          트라디노이 6층 하우스웨딩홀<br/>
+          주소: 서울 강남구 도곡로99길 16
         </p>
         <NaverMap/>
       </div>
@@ -197,10 +195,6 @@ export default function Home() {
           모든 분들을 귀하게 모실 수 있도록<br/>
           참석 의사를 전달 부탁드립니다.
         </p>
-        <button type="button" className="btn btn-lg btn-dark w-75">참석 의사 전달하기</button>
-      </div>
-      <div className="section border">
-        {/* TODO 참석 의사 전달 Modal 로 변환 */}
         <AttendanceModal/>
       </div>
       <div className="section">
@@ -208,7 +202,7 @@ export default function Home() {
         <p>
           참석이 어려우신 분들은<br/>
           축하의 마음을 전달해주세요.<br/>
-          *장소가 협소한 관계로 화환은 정중히 사양합니다.
+          <span className="fs-6">*장소가 협소한 관계로 화환은 정중히 사양합니다.</span>
         </p>
         {/* TODO 계좌번호 영역 추가 */}
         <button type="button" className="btn btn-lg btn-dark w-75 mb-4">신랑측 계좌번호</button>
