@@ -201,6 +201,17 @@ export default function Home() {
       <div className="section border">
         <AttendanceModal />
       </div>
+      <div className="section">
+        <p className="fs-3 fw-bold">마음 전하실 곳</p>
+        <p>
+          참석이 어려우신 분들은<br/>
+          축하의 마음을 전달해주세요.<br/>
+          *장소가 협소한 관계로 화환은 정중히 사양합니다.
+        </p>
+        {/* TODO 계좌번호 영역 추가 */}
+        <button type="button" className="btn btn-lg btn-dark w-75 mb-4">신랑측 계좌번호</button>
+        <button type="button" className="btn btn-lg btn-dark w-75">신부측 계좌번호</button>
+      </div>
     </div>
   );
 }
