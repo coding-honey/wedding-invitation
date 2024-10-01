@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import "@/css/global.css";
-import { config } from '@fortawesome/fontawesome-svg-core';
-import 'moment/locale/ko';
+import {config} from '@fortawesome/fontawesome-svg-core';
 
 config.autoAddCss = false;
 
@@ -17,13 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="ko">
-      <body className="fs-5 text-center">{children}</body>
+    <body className="fs-5 text-center">{children}</body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MuiDateCalendar from "@/app/_component/calendar/MuiDateCalendar";
 import moment from "moment";
+import 'moment/locale/ko';
 import manIconImage from "@/public/Image/man-icon.png";
 import loveIconImage from "@/public/Image/love-icon.png";
 import girlIconImage from "@/public/Image/girl-icon.png";
@@ -13,27 +14,27 @@ export default function CalendarWrapper() {
   return (
     <>
       <div className="d-flex justify-content-center">
-        <MuiDateCalendar />
+        <MuiDateCalendar/>
       </div>
       <div className="d-flex justify-content-center mb-3">
         <Image
           src={manIconImage}
           width={24}
           height={24}
-          alt="man icon" />
+          alt="man icon"/>
         <Image
           className="mx-2"
           src={loveIconImage}
           width={24}
           height={24}
-          alt="heart icon" />
+          alt="heart icon"/>
         <Image
           src={girlIconImage}
           width={24}
           height={24}
-          alt="girl icon" />
+          alt="girl icon"/>
       </div>
-      <CalendarDesc days={diffDays} />
+      <CalendarDesc days={diffDays}/>
     </>
   );
 }
