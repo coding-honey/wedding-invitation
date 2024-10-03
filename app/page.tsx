@@ -9,6 +9,7 @@ import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 import ContactWrapper from "@/app/_component/contact/ContactWrapper";
+import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
 import AlertGlobal from "@/app/_component/alert/AlertGlobal";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
@@ -141,9 +142,7 @@ export default function Home() {
           축하의 마음을 전달해주세요.<br/>
           <span className="fs-6">*장소가 협소한 관계로 화환은 정중히 사양합니다.</span>
         </p>
-        {/* TODO 계좌번호 영역 추가 */}
-        <button type="button" className="btn btn-lg btn-dark w-75 mb-4">신랑측 계좌번호</button>
-        <button type="button" className="btn btn-lg btn-dark w-75">신부측 계좌번호</button>
+        <BankAccordionWrapper/>
       </div>
       <CommentWrapper/>
       <span className="text-body-tertiary">Copyright 2025. Honeyrenda. All rights reserved.</span>
