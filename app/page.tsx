@@ -8,7 +8,7 @@ import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
-import ContactModal from "@/app/_component/modal/ContactModal";
+import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
@@ -75,7 +75,7 @@ export default function Home() {
             <span>박선영</span>
           </div>
         </div>
-        <ContactModal/>
+        <ContactWrapper/>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">Album</p>
