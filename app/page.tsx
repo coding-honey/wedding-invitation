@@ -3,12 +3,13 @@ import ImageSlider from "@/app/_component/ImageSlider";
 import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/_component/calendar/CalendarWrapper";
 import NaverMap from "@/app/_component/NaverMap";
-import AttendanceModal from "@/app/_component/modal/AttendanceModal";
+import AttendanceWrapper from "@/app/_component/AttendanceWrapper";
 import main1Image from "@/public/Image/main1.png";
 import main2Image from "@/public/Image/main2.png";
 import main3Image from "@/public/Image/main3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 import ContactWrapper from "@/app/_component/contact/ContactWrapper";
+import AlertGlobal from "@/app/_component/alert/AlertGlobal";
 
 const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
 
@@ -131,7 +132,7 @@ export default function Home() {
           모든 분들을 귀하게 모실 수 있도록<br/>
           참석 의사를 전달 부탁드립니다.
         </p>
-        <AttendanceModal/>
+        <AttendanceWrapper/>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">마음 전하실 곳</p>
@@ -146,6 +147,7 @@ export default function Home() {
       </div>
       <CommentWrapper/>
       <span className="text-body-tertiary">Copyright 2025. Honeyrenda. All rights reserved.</span>
+      <AlertGlobal/>
     </div>
   );
 }

@@ -4,9 +4,12 @@ import {FormLabel} from "@mui/material";
 import {ChangeEvent, FormEvent, useState} from "react";
 import {createAttendance} from "@/app/_action/attendance";
 import AttendanceC, {DEFAULT_ATTENDANCE} from "@/types/attendance";
-import ModalWrapper from "@/app/_component/modal/ModalWrapper";
+import ModalWrapper from "@/app/_component/ModalWrapper";
+import {useAlert} from "@/app/_provider/AlertProvider";
 
-export default function AttendanceModal() {
+export default function AttendanceWrapper() {
+  const {openAlert} = useAlert();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -42,7 +45,7 @@ export default function AttendanceModal() {
        */
       const result = await createAttendance({...attendance});
       if (result.acknowledged) {
-        alert("저장되었습니다.");
+        openAlert("저장되었습니다.");
         setAttendance(new AttendanceC());
         closeModal();
       } else {

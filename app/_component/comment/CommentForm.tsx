@@ -4,10 +4,12 @@ import {TextField} from "@mui/material";
 import {ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from "react";
 import CommentC from "@/types/comment";
 import {createComment, findAllComment} from "@/app/_action/comment";
+import {useAlert} from "@/app/_provider/AlertProvider";
 
 export default function CommentForm({setComments}: {
   setComments: Dispatch<SetStateAction<CommentC[]>>
 }) {
+  const {openAlert} = useAlert();
   const [comment, setComment] = useState<CommentC>(new CommentC());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +28,7 @@ export default function CommentForm({setComments}: {
        */
       const result = await createComment({...comment});
       if (result.acknowledged) {
-        alert("저장되었습니다.");
+        openAlert("저장되었습니다.");
         setComment(new CommentC());
         setComments((await findAllComment()) as CommentC[]);
       } else {
