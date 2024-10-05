@@ -81,7 +81,9 @@ export default function Home() {
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">Album</p>
-        <ImageSlider/>
+        <div className="d-flex justify-content-center">
+          <ImageSlider/>
+        </div>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">Video</p>

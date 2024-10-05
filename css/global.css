@@ -3,6 +3,7 @@
 @import "./font.css";
 @import "./form.css";
 @import "./modal.css";
+@import "./swiper.css";
 
 html {
     font-size: 14px;
@@ -41,7 +42,6 @@ body {
 
         .img-fluid {
             width: 80% !important;
-            height: 100% !important;
         }
 
         .MuiDateCalendar-root {
