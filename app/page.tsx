@@ -80,6 +80,24 @@ export default function Home() {
         <ContactWrapper/>
       </div>
       <div className="section">
+        <p className="fs-3 fw-bold">참석 의사 전달</p>
+        <p>
+          축하의 마음으로 참석해주시는<br/>
+          모든 분들을 귀하게 모실 수 있도록<br/>
+          참석 의사를 전달 부탁드립니다.
+        </p>
+        <AttendanceWrapper/>
+      </div>
+      <div className="section">
+        <Image
+          className="img-fluid"
+          src={main3Image}
+          width={439}
+          height={645}
+          alt="main picture 3">
+        </Image>
+      </div>
+      <div className="section">
         <p className="fs-3 fw-bold">Album</p>
         <div className="d-flex justify-content-center">
           <ImageSlider/>
@@ -118,24 +136,6 @@ export default function Home() {
           * 대치2동문화센터 공영주차장입구<br/>
           주소: 서울 강남구 영동대로65길 24
         </p>
-      </div>
-      <div className="section">
-        <Image
-          className="img-fluid"
-          src={main3Image}
-          width={439}
-          height={645}
-          alt="main picture 3">
-        </Image>
-      </div>
-      <div className="section">
-        <p className="fs-3 fw-bold">참석 의사 전달</p>
-        <p>
-          축하의 마음으로 참석해주시는<br/>
-          모든 분들을 귀하게 모실 수 있도록<br/>
-          참석 의사를 전달 부탁드립니다.
-        </p>
-        <AttendanceWrapper/>
       </div>
       <div className="section">
         <p className="fs-3 fw-bold">마음 전하실 곳</p>
