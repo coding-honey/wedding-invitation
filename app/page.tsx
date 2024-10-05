@@ -62,7 +62,7 @@ export default function Home() {
             <span>김형순</span>
           </div>
           <div className="col text-start">
-            <span className="fs-6">장남</span>
+            <span className="text-body-tertiary fs-6">장남</span>
             <span className="mx-2"></span>
             <span>정동헌</span>
           </div>
@@ -72,7 +72,7 @@ export default function Home() {
             <span>김남희</span>
           </div>
           <div className="col text-start">
-            <span className="fs-6">장녀</span>
+            <span className="text-body-tertiary fs-6">장녀</span>
             <span className="mx-2"></span>
             <span>박선영</span>
           </div>
@@ -145,7 +145,7 @@ export default function Home() {
         <BankAccordionWrapper/>
       </div>
       <CommentWrapper/>
-      <span className="text-body-tertiary">Copyright 2025. Honeyrenda. All rights reserved.</span>
+      <span className="text-body-tertiary fs-6">Copyright 2025. Honeyrenda. All rights reserved.</span>
       <AlertGlobal/>
     </div>
   );
