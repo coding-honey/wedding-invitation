@@ -1,8 +1,11 @@
 "use client";
-import { useEffect } from "react";
+
+import {useEffect, useState} from "react";
 import Script from "next/script";
 
 export default function NaverMap() {
+  const [isClient, setIsClient] = useState(false);
+
   const initMap = () => {
     // Brewery
     var map = new naver.maps.Map('map', {
@@ -15,16 +18,20 @@ export default function NaverMap() {
       map: map
     })
   };
-  //useEffect hook을 사용하여 초기 페이지가 로딩될때 맵을 생성합니다.
+
   useEffect(() => {
-    initMap()
+    setIsClient(true);
   }, [])
 
   return (
     <>
-      <Script strategy='beforeInteractive' type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=r5hmbpqmrt" />
-      <div id="map" style={{"width": "100%", "height": "400px"}} />
+      {isClient &&
+          <Script type="text/javascript" onLoad={initMap} async={true}
+                  src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
+      }
+      <div id="map" style={{"width": "100%", "height": "400px"}}/>
     </>
-  );
+  )
+    ;
 }
 
