@@ -6,6 +6,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {Autoplay, Pagination} from 'swiper/modules';
 import Image from "next/image";
+import album1Image from "@/public/Image/album1.png";
+import album2Image from "@/public/Image/album2.png";
 
 export default function ImageSlider() {
   return (
@@ -23,7 +25,7 @@ export default function ImageSlider() {
         <SwiperSlide className="mt-auto">
           <Image
             className="img-fluid"
-            src="/image/album1.png"
+            src={album1Image}
             width={408}
             height={230}
             alt="Album slide image 1"/>
@@ -32,7 +34,7 @@ export default function ImageSlider() {
         <SwiperSlide>
           <Image
             className="img-fluid"
-            src="/image/album2.png"
+            src={album2Image}
             width={408}
             height={230}
             alt="Album slide image 2"/>
