@@ -10,7 +10,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCopy} from "@fortawesome/free-solid-svg-icons";
 import {useAlert} from "@/app/_provider/AlertProvider";
 
-interface AccountProps {
+export interface AccountProps {
   title: string;
   kPayLink?: string;
 }
@@ -25,7 +25,7 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
-      <Accordion sx={{width: '80%'}}>
+      <Accordion sx={{width: '95%'}}>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon sx={{color: "white"}}/>}
           aria-controls="panel1-content"
@@ -43,8 +43,7 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
         </AccordionSummary>
         <AccordionDetails className="fs-6" sx={{borderTop: "1px solid white"}}>
           {accounts.map((account, index) => (
-            <div key={index}
-                 className={'row align-items-center'}>
+            <div key={index} className="row align-items-center">
               <div className="col-8 text-start">{account.title}</div>
               <div className="col-4 d-flex justify-content-end align-items-center">
                 {account.kPayLink !== undefined &&
