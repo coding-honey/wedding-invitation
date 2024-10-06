@@ -22,7 +22,8 @@ body {
     background-color: white;
 
     > div.section {
-        margin-bottom: 3rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
 
         &:first-child {
             margin-top: 1rem !important;
@@ -32,7 +33,7 @@ body {
             margin-top: 1rem !important;
         }
 
-        > p {
+        p {
             margin-bottom: 2rem;
 
             &:last-child {

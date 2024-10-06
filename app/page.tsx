@@ -12,7 +12,9 @@ import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
 import AlertGlobal from "@/app/_component/alert/AlertGlobal";
 
-const VideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {ssr: false});
+const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -79,6 +81,7 @@ export default function Home() {
         </div>
         <ContactWrapper/>
       </div>
+      <hr/>
       <div className="section">
         <p className="fs-3 fw-bold">참석 의사 전달</p>
         <p>
@@ -87,6 +90,51 @@ export default function Home() {
           참석 의사를 전달 부탁드립니다.
         </p>
         <AttendanceWrapper/>
+      </div>
+      <hr/>
+      <div className="section">
+        <CalendarWrapper/>
+      </div>
+      <hr/>
+      <div className="section">
+        <p className="fs-3 fw-bold">Album</p>
+        <div className="d-flex justify-content-center">
+          <ImageSlider/>
+        </div>
+      </div>
+      <div className="section">
+        <p className="fs-3 fw-bold">Video</p>
+        <div className="d-flex justify-content-center">
+          <DynamicVideoPlayer/>
+        </div>
+      </div>
+      <hr/>
+      <div className="section">
+        <p className="fs-3 fw-bold">오시는 길</p>
+        <p>
+          트라디노이 6층 하우스웨딩홀<br/>
+          주소: 서울 강남구 도곡로99길 16
+        </p>
+        <NaverMap/>
+      </div>
+      <div className="section text-start mx-4 card">
+        <div className="card-body">
+          <p className="fs-4 fw-bold">지하철</p>
+          <p>
+            [2호선] 삼성역 3번출구 도보 14분<br/>
+            [3호선] 학여울역 1번출구 도보 14분
+          </p>
+          <p className="fs-4 fw-bold">버스</p>
+          <p>
+            마을버스 강남 01, 강남 06<br/>
+            401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917
+          </p>
+          <p className="fs-4 fw-bold">주차정보</p>
+          <p>
+            * 대치2동문화센터 공영주차장입구<br/>
+            주소: 서울 강남구 영동대로65길 24
+          </p>
+        </div>
       </div>
       <div className="section">
         <Image
@@ -98,46 +146,6 @@ export default function Home() {
         </Image>
       </div>
       <div className="section">
-        <p className="fs-3 fw-bold">Album</p>
-        <div className="d-flex justify-content-center">
-          <ImageSlider/>
-        </div>
-      </div>
-      <div className="section">
-        <p className="fs-3 fw-bold">Video</p>
-        <div className="d-flex justify-content-center">
-          <VideoPlayer/>
-        </div>
-      </div>
-      <div className="section">
-        <CalendarWrapper/>
-      </div>
-      <div className="section">
-        <p className="fs-3 fw-bold">오시는 길</p>
-        <p>
-          트라디노이 6층 하우스웨딩홀<br/>
-          주소: 서울 강남구 도곡로99길 16
-        </p>
-        <NaverMap/>
-      </div>
-      <div className="section text-start mx-4">
-        <p className="fs-4 fw-bold">지하철</p>
-        <p>
-          [2호선] 삼성역 3번출구 도보 14분<br/>
-          [3호선] 학여울역 1번출구 도보 14분
-        </p>
-        <p className="fs-4 fw-bold">버스</p>
-        <p>
-          마을버스 강남 01, 강남 06<br/>
-          401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917
-        </p>
-        <p className="fs-4 fw-bold">주차정보</p>
-        <p>
-          * 대치2동문화센터 공영주차장입구<br/>
-          주소: 서울 강남구 영동대로65길 24
-        </p>
-      </div>
-      <div className="section">
         <p className="fs-3 fw-bold">마음 전하실 곳</p>
         <p>
           참석이 어려우신 분들은<br/>
@@ -146,6 +154,7 @@ export default function Home() {
         </p>
         <BankAccordionWrapper/>
       </div>
+      <hr/>
       <CommentWrapper/>
       <span className="text-body-tertiary fs-6">Copyright 2025. Honeyrenda. All rights reserved.</span>
       <AlertGlobal/>

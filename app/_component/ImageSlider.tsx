@@ -20,7 +20,6 @@ export default function ImageSlider() {
         autoplay={{delay: 4000}}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper"
       >
         <SwiperSlide className="mt-auto">
           <Image

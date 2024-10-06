@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Script from "next/script";
 
 export default function NaverMap() {
@@ -19,18 +19,12 @@ export default function NaverMap() {
     })
   };
 
-  useEffect(() => {
-    setIsClient(true);
-  }, [])
-
   return (
-    <>
-      {isClient &&
-          <Script type="text/javascript" onLoad={initMap} async={true}
-                  src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
-      }
-      <div id="map" style={{"width": "100%", "height": "400px"}}/>
-    </>
+    <div className="d-flex justify-content-center">
+      <Script type="text/javascript" onLoad={initMap} async={true}
+              src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
+      <div id="map" style={{width: "90%", height: "400px", backgroundColor: "#E7E7E7"}}/>
+    </div>
   )
     ;
 }

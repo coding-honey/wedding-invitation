@@ -27,7 +27,7 @@ export default function CommentList({comments, setComments}: {
         :
         <div className="fs-6">
           {comments.map((comment) => (
-            <div key={comment._id?.toString()} className="border text-start p-3 mb-4">
+            <div key={comment._id} className="border text-start p-3 mb-4">
               <p>@ {comment.name}</p>
               <hr/>
               <p>{comment.content}</p>
