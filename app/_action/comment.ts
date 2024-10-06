@@ -4,6 +4,7 @@ import clientPromise from "@/lib/mongodb";
 import CommentC from "@/types/comment";
 import moment from "@/lib/moment";
 import {hashPassword} from "@/lib/bcrypt";
+import {ObjectId} from "mongodb";
 
 async function getCollection() {
   const client = await clientPromise;
@@ -21,6 +22,14 @@ export async function createComment(comment: Omit<CommentC, '_id'>) {
   return {...result, insertedId: result.insertedId.toString()}
 }
 
+export async function deleteComment(_id: string) {
+  const collection = await getCollection();
+  const result = await collection.deleteOne({
+    _id: new ObjectId(_id),
+  });
+  return {...result}
+}
+
 const yyyyMMdd = moment().format("YYYY-MM-DD ");
 
 export async function findAllComment() {
@@ -31,7 +40,6 @@ export async function findAllComment() {
   return rows.map((row) => {
     return {
       ...row,
-      _id: row._id.toString(),
       createdAt: row.createdAt != undefined ? row.createdAt.replace(yyyyMMdd, "") : "",
     };
   });
