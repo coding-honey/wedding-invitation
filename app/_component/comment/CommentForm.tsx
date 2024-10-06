@@ -64,6 +64,7 @@ export default function CommentForm({setComments}: {
         type="password"
         value={comment.password}
         onChange={handleChange}
+        autoComplete="new-password"
       />
       <TextField
         variant="outlined"
