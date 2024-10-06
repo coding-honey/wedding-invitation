@@ -93,10 +93,6 @@ export default function Home() {
       </div>
       <hr/>
       <div className="section">
-        <CalendarWrapper/>
-      </div>
-      <hr/>
-      <div className="section">
         <p className="fs-3 fw-bold">Album</p>
         <div className="d-flex justify-content-center">
           <ImageSlider/>
@@ -107,6 +103,10 @@ export default function Home() {
         <div className="d-flex justify-content-center">
           <DynamicVideoPlayer/>
         </div>
+      </div>
+      <hr/>
+      <div className="section">
+        <CalendarWrapper/>
       </div>
       <hr/>
       <div className="section">
