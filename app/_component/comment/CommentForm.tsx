@@ -48,11 +48,21 @@ export default function CommentForm({setComments}: {
       </p>
       <TextField
         variant="outlined"
-        sx={{width: '100%', mb: '1rem'}}
+        sx={{width: '50%', mb: '1rem'}}
         label="성함"
         placeholder="성함을 입력해주세요."
         name="name"
         value={comment.name}
+        onChange={handleChange}
+      />
+      <TextField
+        variant="outlined"
+        sx={{width: '50%', mb: '1rem'}}
+        label="비밀번호"
+        placeholder="비밀번호를 입력해주세요."
+        name="password"
+        type="password"
+        value={comment.password}
         onChange={handleChange}
       />
       <TextField

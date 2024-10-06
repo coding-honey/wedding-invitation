@@ -3,6 +3,7 @@
 import clientPromise from "@/lib/mongodb";
 import CommentC from "@/types/comment";
 import moment from "@/lib/moment";
+import {hashPassword} from "@/lib/bcrypt";
 
 async function getCollection() {
   const client = await clientPromise;
@@ -14,6 +15,7 @@ export async function createComment(comment: Omit<CommentC, '_id'>) {
   const collection = await getCollection();
   const result = await collection.insertOne({
     ...comment,
+    password: await hashPassword(comment.password),
     createdAt: moment().format("YYYY-MM-DD HH:mm:ss")
   });
   return {...result, insertedId: result.insertedId.toString()}
