@@ -40,6 +40,7 @@ export async function findAllComment() {
   return rows.map((row) => {
     return {
       ...row,
+      _id: row._id.toString(),
       createdAt: row.createdAt != undefined ? row.createdAt.replace(yyyyMMdd, "") : "",
     };
   });

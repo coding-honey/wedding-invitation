@@ -21,22 +21,28 @@ export default function CommentForm({setComments}: {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      /*
-      Server Action 에 Class or null 은 전달할 수 없음.
-      구조 분해 할당을 통해 객체 속성만 전달 // {...comment}
-       */
-      const result = await createComment({...comment});
-      if (result.acknowledged) {
-        openAlert("저장되었습니다.");
-        setComment(new CommentC());
-        setComments((await findAllComment()) as CommentC[]);
-      } else {
+    if (comment.name.trim() === '') {
+      openAlert("성함은 반드시 입력해주세요.", "warning");
+    } else if (comment.content.trim() === '') {
+      openAlert("내용은 반드시 입력해주세요.", "warning");
+    } else {
+      try {
+        /*
+        Server Action 에 Class or null 은 전달할 수 없음.
+        구조 분해 할당을 통해 객체 속성만 전달 // {...comment}
+         */
+        const result = await createComment({...comment});
+        if (result.acknowledged) {
+          openAlert("저장되었습니다.");
+          setComment(new CommentC());
+          setComments((await findAllComment()) as CommentC[]);
+        } else {
+          alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
+        }
+      } catch (e) {
+        console.error(e);
         alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
       }
-    } catch (e) {
-      console.error(e);
-      alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
     }
   }
 
@@ -49,7 +55,7 @@ export default function CommentForm({setComments}: {
       <TextField
         variant="outlined"
         sx={{width: '50%', mb: '1rem'}}
-        label="성함"
+        label={<>성함<sup className="text-danger">*</sup></>}
         placeholder="성함을 입력해주세요."
         name="name"
         value={comment.name}
@@ -71,7 +77,7 @@ export default function CommentForm({setComments}: {
         sx={{width: '100%', mb: '1rem'}}
         multiline
         rows={3}
-        label="내용"
+        label={<>내용<sup className="text-danger">*</sup></>}
         placeholder="내용을 입력해주세요."
         name="content"
         value={comment.content}

@@ -47,10 +47,6 @@ export default function CommentList({comments, setComments}: {
       const isMatch = await comparePassword(passwordConfirm, hashedPassword);
       if (isMatch) {
         try {
-          /*
-          Server Action 에 Class or null 은 전달할 수 없음.
-          구조 분해 할당을 통해 객체 속성만 전달 // {...comment}
-           */
           const result = await deleteComment(commentId);
           if (result.acknowledged && result.deletedCount > 0) {
             openAlert("삭제되었습니다.");
