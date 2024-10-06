@@ -15,11 +15,13 @@ export async function createComment(comment: Omit<CommentC, '_id'>) {
   const collection = await getCollection();
   const result = await collection.insertOne({
     ...comment,
-    password: await hashPassword(comment.password),
+    password: comment.password.trim() !== '' ? await hashPassword(comment.password) : '',
     createdAt: moment().format("YYYY-MM-DD HH:mm:ss")
   });
   return {...result, insertedId: result.insertedId.toString()}
 }
+
+const yyyyMMdd = moment().format("YYYY-MM-DD ");
 
 export async function findAllComment() {
   const collection = await getCollection();
@@ -30,6 +32,7 @@ export async function findAllComment() {
     return {
       ...row,
       _id: row._id.toString(),
+      createdAt: row.createdAt != undefined ? row.createdAt.replace(yyyyMMdd, "") : "",
     };
   });
 }

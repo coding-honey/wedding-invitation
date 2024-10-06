@@ -5,7 +5,6 @@ import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {findAllComment} from "@/app/_action/comment";
 import {Skeleton} from "@mui/material";
 
-
 export default function CommentList({comments, setComments}: {
   comments: CommentC[],
   setComments: Dispatch<SetStateAction<CommentC[]>>
