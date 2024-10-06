@@ -21,7 +21,21 @@ export default function AttendanceWrapper() {
   const [attendance, setAttendance] = useState<AttendanceC>(new AttendanceC());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.name === 'peopleCnt') {
+    if (e.target.name === 'telno') {
+      let value = e.target.value.replace(/[^0-9]/g, '').slice(0, 11);
+      if (value.length <= 10) {
+        // 유선 전화번호 형식: 02-1234-5678
+        value = value.replace(/(\d{2,3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+      } else {
+        // 핸드폰 번호 형식: 010-1234-5678
+        value = value.replace(/(\d{3})(\d{3,4})(\d{4})/, '$1-$2-$3');
+      }
+
+      setAttendance({
+        ...attendance,
+        telno: value,
+      })
+    } else if (e.target.name === 'peopleCnt') {
       let peopleCnt = Number(e.target.value || DEFAULT_ATTENDANCE.peopleCnt);
 
       setAttendance({
@@ -38,22 +52,29 @@ export default function AttendanceWrapper() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      /*
-      Server Action 에 Class or null 은 전달할 수 없음.
-      구조 분해 할당을 통해 객체 속성만 전달 // {...attendance}
-       */
-      const result = await createAttendance({...attendance});
-      if (result.acknowledged) {
-        openAlert("저장되었습니다.");
-        setAttendance(new AttendanceC());
-        closeModal();
-      } else {
+
+    if (attendance.name.trim() === '') {
+      openAlert("성함은 반드시 입력해주세요.", "warning");
+    } else if (attendance.telno.trim() === '') {
+      openAlert("전화번호는 반드시 입력해주세요.", "warning");
+    } else {
+      try {
+        /*
+        Server Action 에 Class or null 은 전달할 수 없음.
+        구조 분해 할당을 통해 객체 속성만 전달 // {...attendance}
+         */
+        const result = await createAttendance({...attendance});
+        if (result.acknowledged) {
+          openAlert("저장되었습니다.");
+          setAttendance(new AttendanceC());
+          closeModal();
+        } else {
+          alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
+        }
+      } catch (e) {
+        console.error(e);
         alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
       }
-    } catch (e) {
-      console.error(e);
-      alert("참석 의사 전달 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
     }
   }
 
@@ -65,7 +86,7 @@ export default function AttendanceWrapper() {
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-3 text-end">
-              <FormLabel id="sectionCd" className="text-end">구분</FormLabel>
+              <FormLabel id="sectionCd" className="text-end">구분<sup className="text-danger">*</sup></FormLabel>
             </div>
             <div className="col-8">
               <div className="btn-group w-100" role="group" aria-label="sectionCd"
@@ -84,11 +105,21 @@ export default function AttendanceWrapper() {
           </div>
           <div className="row">
             <div className="col-3 text-end">
-              <FormLabel className="text-end">성함</FormLabel>
+              <FormLabel className="text-end">성함<sup className="text-danger">*</sup></FormLabel>
             </div>
             <div className="col-8">
               <input type="text" name="name" className="form-control"
                      value={attendance.name} onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-3 text-end">
+              <FormLabel className="text-end">전화번호<sup className="text-danger">*</sup></FormLabel>
+            </div>
+            <div className="col-8">
+              <input type="text" name="telno" className="form-control"
+                     value={attendance.telno} onChange={handleChange}
               />
             </div>
           </div>
@@ -114,7 +145,7 @@ export default function AttendanceWrapper() {
           </div>
           <div className="row">
             <div className="col-3 text-end">
-              <FormLabel id="eatYnLabel" className="text-end">식사여부</FormLabel>
+              <FormLabel id="eatYnLabel" className="text-end">식사여부<sup className="text-danger">*</sup></FormLabel>
             </div>
             <div className="col-8">
               <div className="btn-group w-100" role="group" aria-label="eatYnLabel"
