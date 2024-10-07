@@ -14,8 +14,11 @@ html {
         font-size: 13px;
     }
 
-    @media (max-width: 391px) {
+    @media (min-width: 340px) and (max-width: 391px) {
         font-size: 12px;
+    }
+    @media (max-width: 340px) {
+        font-size: 11px;
     }
 
     body {
@@ -33,8 +36,12 @@ html {
         padding: 2rem;
     }
 
-    @media (max-width: 391px) {
+    @media (min-width: 340px) and (max-width: 391px) {
         padding: 1rem;
+
+    }
+    @media (max-width: 340px) {
+        padding: 0.5rem;
     }
     background-color: white;
 
