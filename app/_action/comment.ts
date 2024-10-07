@@ -38,10 +38,12 @@ export async function findAllComment() {
     createdAt: -1
   }).toArray();
   return rows.map((row) => {
+    let createdAt = row.createdAt != null ? row.createdAt.replace(yyyyMMdd, "") : "";
+    createdAt = createdAt.slice(0, createdAt.lastIndexOf(":"));
     return {
       ...row,
       _id: row._id.toString(),
-      createdAt: row.createdAt != undefined ? row.createdAt.replace(yyyyMMdd, "") : "",
+      createdAt: createdAt,
     };
   });
 }
