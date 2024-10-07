@@ -10,7 +10,7 @@ import main3Image from "@/public/Image/main3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
-import AlertGlobal from "@/app/_component/alert/AlertGlobal";
+import SnackbarGlobal from "@/app/_component/snackbar/SnackbarGlobal";
 
 const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
   ssr: false,
@@ -150,14 +150,14 @@ export default function Home() {
         <p>
           참석이 어려우신 분들은<br/>
           축하의 마음을 전달해주세요.<br/>
-          <span className="fs-6">*장소가 협소한 관계로 화환은 정중히 사양합니다.</span>
+          <span className="fs-6">* 장소가 협소한 관계로 화환은 정중히 사양합니다.</span>
         </p>
         <BankAccordionWrapper/>
       </div>
       <hr/>
       <CommentWrapper/>
       <span className="text-body-tertiary fs-6">Copyright 2025. Honeyrenda. All rights reserved.</span>
-      <AlertGlobal/>
+      <SnackbarGlobal/>
     </div>
   );
 }

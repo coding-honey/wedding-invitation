@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "@/css/global.css";
 import {config} from '@fortawesome/fontawesome-svg-core';
-import AlertProvider from "@/app/_provider/AlertProvider";
+import SnackbarProvider from "@/app/_provider/SnackbarProvider";
 
 config.autoAddCss = false;
 
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
     <body className="fs-5 text-center">
-    <AlertProvider>
+    <SnackbarProvider>
       {children}
-    </AlertProvider>
+    </SnackbarProvider>
     </body>
     </html>
   );

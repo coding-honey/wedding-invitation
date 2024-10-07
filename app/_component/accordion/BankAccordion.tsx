@@ -8,7 +8,7 @@ import kPayIcon from "@/public/Image/payment_icon_yellow_small.png";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCopy} from "@fortawesome/free-solid-svg-icons";
-import {useAlert} from "@/app/_provider/AlertProvider";
+import {useSnackbar} from "@/app/_provider/SnackbarProvider";
 
 export interface AccountProps {
   title: string;
@@ -21,7 +21,7 @@ interface BankAccordionProps {
 }
 
 export default function BankAccordion({title, accounts}: BankAccordionProps) {
-  const {openAlert} = useAlert();
+  const {handleOpenSnackbar} = useSnackbar();
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
@@ -53,7 +53,7 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
                     </a>
                 }
                 <div style={{cursor: "pointer"}}>
-                  <CopyToClipboard text={account.title} onCopy={() => openAlert('복사되었습니다.')}>
+                  <CopyToClipboard text={account.title} onCopy={() => handleOpenSnackbar('복사되었습니다.')}>
                     <FontAwesomeIcon icon={faCopy} size={'xl'}/>
                   </CopyToClipboard>
                 </div>

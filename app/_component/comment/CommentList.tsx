@@ -5,16 +5,19 @@ import {Dispatch, FormEvent, SetStateAction, useEffect, useState} from "react";
 import {deleteComment, findAllComment} from "@/app/_action/comment";
 import {Skeleton, TextField} from "@mui/material";
 import ModalWrapper from "@/app/_component/ModalWrapper";
-import {useAlert} from "@/app/_provider/AlertProvider";
 import {comparePassword} from "@/lib/bcrypt";
+import {useSnackbar} from "@/app/_provider/SnackbarProvider";
 
 export default function CommentList({comments, setComments}: {
   comments: CommentC[],
   setComments: Dispatch<SetStateAction<CommentC[]>>
 }) {
+  const {handleOpenSnackbar} = useSnackbar();
+
   const [loading, setLoading] = useState(true);
   // const [page, setPage] = useState(1);
 
+  // 댓글 fetching
   useEffect(() => {
     (async () => {
       setLoading(true);
@@ -23,7 +26,7 @@ export default function CommentList({comments, setComments}: {
     })();
   }, []);
 
-  const {openAlert} = useAlert();
+  // 댓글 삭제 Modal
   const [passwordConfirm, setPasswordConfirm] = useState<string>('');
   const [commentId, setCommentId] = useState<string>('');
   const [hashedPassword, setHashedPassword] = useState<string>('');
@@ -37,19 +40,18 @@ export default function CommentList({comments, setComments}: {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (passwordConfirm.trim() === '') {
-      openAlert("비밀번호를 입력해주세요.", "warning");
+      handleOpenSnackbar("비밀번호를 입력해주세요.", "warning");
     } else {
       const isMatch = await comparePassword(passwordConfirm, hashedPassword);
       if (isMatch) {
         try {
           const result = await deleteComment(commentId);
           if (result.acknowledged && result.deletedCount > 0) {
-            openAlert("삭제되었습니다.");
+            handleOpenSnackbar("삭제되었습니다.");
             setComments((await findAllComment()) as CommentC[]);
             closeModal();
           }
@@ -58,7 +60,7 @@ export default function CommentList({comments, setComments}: {
           alert("댓글 삭제 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
         }
       } else {
-        openAlert("비밀번호가 일치하지 않습니다.", "error");
+        handleOpenSnackbar("비밀번호가 일치하지 않습니다.", "error");
       }
     }
   }

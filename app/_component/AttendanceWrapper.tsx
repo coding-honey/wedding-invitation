@@ -5,10 +5,10 @@ import {ChangeEvent, FormEvent, useState} from "react";
 import {createAttendance} from "@/app/_action/attendance";
 import AttendanceC, {DEFAULT_ATTENDANCE} from "@/types/attendance";
 import ModalWrapper from "@/app/_component/ModalWrapper";
-import {useAlert} from "@/app/_provider/AlertProvider";
+import {useSnackbar} from "@/app/_provider/SnackbarProvider";
 
 export default function AttendanceWrapper() {
-  const {openAlert} = useAlert();
+  const {handleOpenSnackbar} = useSnackbar();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
@@ -54,9 +54,9 @@ export default function AttendanceWrapper() {
     e.preventDefault();
 
     if (attendance.name.trim() === '') {
-      openAlert("성함은 반드시 입력해주세요.", "warning");
+      handleOpenSnackbar("성함은 반드시 입력해주세요.", "warning");
     } else if (attendance.telno.trim() === '') {
-      openAlert("전화번호는 반드시 입력해주세요.", "warning");
+      handleOpenSnackbar("전화번호는 반드시 입력해주세요.", "warning");
     } else {
       try {
         /*
@@ -65,7 +65,7 @@ export default function AttendanceWrapper() {
          */
         const result = await createAttendance({...attendance});
         if (result.acknowledged) {
-          openAlert("저장되었습니다.");
+          handleOpenSnackbar("저장되었습니다.");
           setAttendance(new AttendanceC());
           closeModal();
         } else {
@@ -165,7 +165,7 @@ export default function AttendanceWrapper() {
             </div>
           </div>
           <div className="row justify-content-center mt-4">
-            <button type="submit" className="btn btn-lg w-75 fs-4 text-white" style={{backgroundColor: '#1D327D'}}>
+            <button type="submit" className="btn btn-lg btn-dark w-75 fs-4">
               참석 의사 전달하기
             </button>
           </div>

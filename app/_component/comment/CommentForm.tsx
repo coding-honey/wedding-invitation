@@ -4,12 +4,12 @@ import {TextField} from "@mui/material";
 import {ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from "react";
 import CommentC from "@/types/comment";
 import {createComment, findAllComment} from "@/app/_action/comment";
-import {useAlert} from "@/app/_provider/AlertProvider";
+import {useSnackbar} from "@/app/_provider/SnackbarProvider";
 
 export default function CommentForm({setComments}: {
   setComments: Dispatch<SetStateAction<CommentC[]>>
 }) {
-  const {openAlert} = useAlert();
+  const {handleOpenSnackbar} = useSnackbar();
   const [comment, setComment] = useState<CommentC>(new CommentC());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,9 +22,9 @@ export default function CommentForm({setComments}: {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (comment.name.trim() === '') {
-      openAlert("성함은 반드시 입력해주세요.", "warning");
+      handleOpenSnackbar("성함은 반드시 입력해주세요.", "warning");
     } else if (comment.content.trim() === '') {
-      openAlert("내용은 반드시 입력해주세요.", "warning");
+      handleOpenSnackbar("내용은 반드시 입력해주세요.", "warning");
     } else {
       try {
         /*
@@ -33,7 +33,7 @@ export default function CommentForm({setComments}: {
          */
         const result = await createComment({...comment});
         if (result.acknowledged) {
-          openAlert("저장되었습니다.");
+          handleOpenSnackbar("저장되었습니다.");
           setComment(new CommentC());
           setComments((await findAllComment()) as CommentC[]);
         } else {
