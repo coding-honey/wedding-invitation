@@ -52,26 +52,28 @@ export default function CommentForm({setComments}: {
       <p>
         축하하는 마음을 남겨주세요.
       </p>
-      <TextField
-        variant="outlined"
-        sx={{width: '50%', mb: '1rem'}}
-        label={<>성함<sup className="text-danger">*</sup></>}
-        placeholder="성함을 입력해주세요."
-        name="name"
-        value={comment.name}
-        onChange={handleChange}
-      />
-      <TextField
-        variant="outlined"
-        sx={{width: '50%', mb: '1rem'}}
-        label="비밀번호"
-        placeholder="비밀번호를 입력해주세요."
-        name="password"
-        type="password"
-        value={comment.password}
-        onChange={handleChange}
-        autoComplete="new-password"
-      />
+      <div className="d-flex justify-content-between mb-3">
+        <TextField
+          variant="outlined"
+          sx={{width: '48%'}}
+          label={<>성함<sup className="text-danger">*</sup></>}
+          placeholder="성함을 입력해주세요."
+          name="name"
+          value={comment.name}
+          onChange={handleChange}
+        />
+        <TextField
+          variant="outlined"
+          sx={{width: '48%'}}
+          label="비밀번호"
+          placeholder="비밀번호를 입력해주세요."
+          name="password"
+          type="password"
+          value={comment.password}
+          onChange={handleChange}
+          autoComplete="new-password"
+        />
+      </div>
       <TextField
         variant="outlined"
         sx={{width: '100%', mb: '1rem'}}

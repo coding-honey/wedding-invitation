@@ -18,7 +18,7 @@ const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"),
 
 export default function Home() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mw">
       <div className="section">
         <p className="fs-3">정동헌 & 박선영</p>
         <p className="fs-4 fw-bold">
@@ -117,7 +117,7 @@ export default function Home() {
         </p>
         <NaverMap/>
       </div>
-      <div className="section text-start mx-4 card">
+      <div className="section text-start card">
         <div className="card-body">
           <p className="fs-4 fw-bold">지하철</p>
           <p>

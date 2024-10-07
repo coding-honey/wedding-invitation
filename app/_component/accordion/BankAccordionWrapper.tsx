@@ -11,7 +11,7 @@ export default function BankAccordionWrapper() {
 
   const brideAccounts: AccountProps[] = [
     {title: '신한 110-510-068990 박선영', kPayLink: 'https://link.kakaopay.com/_/ovlpux3'},
-    {title: '우리 1002-946-257498 김남희'},
+    {title: '우리 1002946-257498 김남희'},
   ];
 
   return (

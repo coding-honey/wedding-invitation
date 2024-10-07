@@ -26,7 +26,7 @@ export default function ContactWrapper() {
 
   return (
     <div>
-      <button type="button" className="btn btn-lg btn-dark w-75 mt-4" onClick={openModal}>혼주에게 연락하기</button>
+      <button type="button" className="btn btn-lg btn-dark w-100 mt-4" onClick={openModal}>혼주에게 연락하기</button>
 
       <ModalWrapper isOpen={isModalOpen} onClose={closeModal} title={'혼주에게 연락하기'}>
         <ContactList contacts={grooms}/>

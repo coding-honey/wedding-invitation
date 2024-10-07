@@ -1,11 +1,8 @@
 "use client";
 
-import {useState} from "react";
 import Script from "next/script";
 
 export default function NaverMap() {
-  const [isClient, setIsClient] = useState(false);
-
   const initMap = () => {
     // Brewery
     var map = new naver.maps.Map('map', {
@@ -23,7 +20,7 @@ export default function NaverMap() {
     <div className="d-flex justify-content-center">
       <Script type="text/javascript" onLoad={initMap} async={true}
               src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
-      <div id="map" style={{width: "90%", height: "400px", backgroundColor: "#E7E7E7"}}/>
+      <div id="map" style={{width: "100%", height: "400px", backgroundColor: "#E7E7E7"}}/>
     </div>
   )
     ;

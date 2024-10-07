@@ -25,11 +25,9 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
-      <Accordion sx={{width: '95%'}}>
+      <Accordion sx={{width: '100%'}}>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon sx={{color: "white"}}/>}
-          aria-controls="panel1-content"
-          id="panel1-header"
           sx={{
             backgroundColor: "#212529",
             color: "white",
@@ -41,7 +39,7 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
         >
           {title}
         </AccordionSummary>
-        <AccordionDetails className="fs-6" sx={{borderTop: "1px solid white"}}>
+        <AccordionDetails sx={{borderTop: "1px solid white"}}>
           {accounts.map((account, index) => (
             <div key={index} className="row align-items-center">
               <div className="col-8 text-start">{account.title}</div>

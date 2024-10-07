@@ -80,7 +80,7 @@ export default function AttendanceWrapper() {
 
   return (
     <div>
-      <button type="button" className="btn btn-lg btn-dark w-75" onClick={openModal}>참석 의사 전달하기</button>
+      <button type="button" className="btn btn-lg btn-dark w-100" onClick={openModal}>참석 의사 전달하기</button>
 
       <ModalWrapper isOpen={isModalOpen} onClose={closeModal} title={'참석 의사 전달'}>
         <form onSubmit={handleSubmit}>
