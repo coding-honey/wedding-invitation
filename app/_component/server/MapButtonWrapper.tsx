@@ -13,20 +13,13 @@ export default async function MapButtonWrapper() {
   return (
     <div className="d-flex justify-content-between bg-body-secondary">
       <a className="btn btn-lg btn-dark d-flex align-items-center" style={{width: '32%'}} target="_blank"
-         href="https://map.naver.com/p/directions/-/14144926.3133202,4509290.5302953,%ED%8A%B8%EB%9D%BC%EB%94%94%EB%85%B8%EC%9D%B4,1297636555,PLACE_POI/-/car?c=15.00,0,0,0"
-        /*`nmap://route/car?dname=${encNm}&dlat=${lat}&dlng=${lng}` mobile용 link 필요시 사용 */
+         href="https://naver.me/GfMsKKWO"
       >
         <Image src={'/logo/navermap_icon.png'} alt={'네이버지도 로고'} width={26} height={26}/>
         <span className="ms-auto" style={{lineHeight: '28px'}}>네이버</span>
       </a>
       <a className="btn btn-lg btn-dark d-flex align-items-center" style={{width: '32%'}} target="_blank"
-         href={
-           isMobile ?
-             `kakaomap://route?ep=${lat},${lng}&by=CAR`
-             :
-             `https://map.kakao.com/link/to/${encNm},${lat},${lng}`
-           // `https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,514591,1111780&rt2=%ED%8A%B8%EB%9D%BC%EB%94%94%EB%85%B8%EC%9D%B4&rtIds=1726372096&rtTypes=PLACE`
-         }
+         href="https://kko.to/IiRVNJc66M"
       >
         <Image src={'/logo/kakaomap_icon.png'} alt={'카카오맵 로고'} width={26} height={26}/>
         <span className="ms-auto" style={{lineHeight: '28px'}}>카카오</span>
