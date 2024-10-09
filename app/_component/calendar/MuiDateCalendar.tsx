@@ -3,7 +3,7 @@
 import {Suspense} from "react";
 import {DateCalendar, DayCalendarSkeleton, LocalizationProvider} from "@mui/x-date-pickers";
 import moment, {defaultLocale, defaultTimezone, weddingDay} from "@/lib/moment";
-import 'moment/locale/ko'; // moment의 한글 로케일 import
+// import 'moment/locale/ko'; // moment의 한글 로케일 import
 import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
 
 export default function MuiDateCalendar() {
