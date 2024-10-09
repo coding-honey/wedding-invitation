@@ -13,10 +13,11 @@ export default function MuiDateCalendar() {
       }
     });
   }
-  
+
   return (
     <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale={moment.locale()}>
       <Suspense fallback={<DayCalendarSkeleton/>}>
+        {moment.locale()}
         <DateCalendar
           className={"calendar"}
           views={['day']}
