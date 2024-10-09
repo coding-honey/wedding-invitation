@@ -2,20 +2,15 @@
 
 import {Suspense} from "react";
 import {DateCalendar, DayCalendarSkeleton, LocalizationProvider} from "@mui/x-date-pickers";
+import moment, {defaultLocale, defaultTimezone, weddingDay} from "@/lib/moment";
+import 'moment/locale/ko'; // moment의 한글 로케일 import
 import {AdapterMoment} from "@mui/x-date-pickers/AdapterMoment";
-import moment, {weddingDay} from "@/lib/moment";
 
 export default function MuiDateCalendar() {
-  if (moment.locale() !== 'ko') {
-    moment.updateLocale("ko", {
-      week: {
-        dow: 1
-      }
-    });
-  }
-
+  moment.tz.setDefault(defaultTimezone);
+  moment.locale(defaultLocale);
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale={moment.locale()}>
+    <LocalizationProvider dateAdapter={AdapterMoment} dateLibInstance={moment} adapterLocale={moment.locale()}>
       <Suspense fallback={<DayCalendarSkeleton/>}>
         {moment.locale()}
         <DateCalendar
@@ -25,6 +20,9 @@ export default function MuiDateCalendar() {
           readOnly
           slotProps={{
             calendarHeader: {format: "YYYY년 M월"},
+            day: {
+              lang: 'ko'
+            },
           }}
           sx={{
             ".MuiPickersCalendarHeader-root": {pointerEvents: 'none'},
