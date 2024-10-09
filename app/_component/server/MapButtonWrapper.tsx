@@ -3,12 +3,13 @@
 import Image from "next/image";
 import {headers} from "next/headers";
 import {lat, lng} from "@/app/_component/NaverMap";
+import {isMobileByUserAgent} from "@/app/_util/mobileUtil";
 
 const encNm = encodeURI("트라디노이");
 
 export default async function MapButtonWrapper() {
   const userAgent = headers().get("user-agent") || '';
-  const isMobile = /Mobi|Android/i.test(userAgent || '');
+  const isMobile = isMobileByUserAgent(userAgent);
 
   return (
     <div className="d-flex justify-content-between bg-body-secondary">
