@@ -68,38 +68,6 @@ html {
         .img-fluid {
             border-radius: 0.375rem;
         }
-
-        .MuiDateCalendar-root {
-            .MuiPickersCalendarHeader-root {
-                pointer-events: none !important;
-
-                .MuiPickersArrowSwitcher-root {
-                    display: none !important;
-                }
-            }
-
-            .MuiDayCalendar-weekContainer {
-                align-items: center !important;
-                justify-content: center !important;
-
-                .MuiButtonBase-root {
-                    padding: 6px !important;
-                    font-family: 'NotoSansKR' !important;
-                }
-
-                .Mui-selected {
-                    border: 0 !important;
-                    border-radius: 50% !important;
-                    color: #fff !important;
-                    background-color: rgba(25, 118, 210, 0.4) !important;
-                    font-weight: 500 !important;
-                }
-            }
-        }
-
-        .MuiFormControlLabel-label {
-            font-family: 'NotoSansKR' !important;
-        }
     }
 }
 
