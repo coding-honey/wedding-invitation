@@ -11,6 +11,7 @@ import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
 import SnackbarGlobal from "@/app/_component/snackbar/SnackbarGlobal";
+import MapButtonWrapper from "@/app/_component/server/MapButtonWrapper";
 
 const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
   ssr: false,
@@ -116,6 +117,7 @@ export default function Home() {
           주소: 서울 강남구 도곡로99길 16
         </p>
         <NaverMap/>
+        <MapButtonWrapper/>
       </div>
       <div className="section text-start card">
         <div className="card-body">

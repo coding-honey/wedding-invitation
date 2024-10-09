@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "source ~/.nvm/nvm.sh && nvm use && next dev",
+    "dev": "source ~/.nvm/nvm.sh && nvm use && next dev --turbo",
     "build": "next build",
     "start": "source ~/.nvm/nvm.sh && nvm use && next build && next start",
     "lint": "source ~/.nvm/nvm.sh && nvm use && next lint",
