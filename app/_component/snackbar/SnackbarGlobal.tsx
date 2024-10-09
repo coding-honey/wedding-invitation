@@ -14,6 +14,7 @@ export default function SnackbarGlobal() {
   // Modal을 body에 렌더링
   return (
     <Snackbar
+      sx={{width: '100%'}}
       key={messageInfo ? messageInfo.key : null}
       open={isOpenSnackbar}
       onClose={handleCloseSnackbar}
@@ -23,10 +24,11 @@ export default function SnackbarGlobal() {
       TransitionComponent={SlideTransition}
     >
       <Alert
+        sx={{width: '100%', borderRadius: '0.375rem'}}
         onClose={handleCloseSnackbar}
         severity={messageInfo ? messageInfo.severity : null}
       >
-        <span className="fs-6" style={{lineHeight: '22px'}}>
+        <span className="fs-6 w-100" style={{lineHeight: '22px'}}>
           {messageInfo ? messageInfo.message : null}
         </span>
       </Alert>
