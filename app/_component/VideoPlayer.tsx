@@ -7,11 +7,11 @@ export default function VideoPlayer() {
   return (
     <ReactPlayer
       className="img-fluid"
-      url="/video/wedding-video.mp4"
+      url="https://youtu.be/IzRK69VWBYY"
       width={'100%'}
-      height={'100%'}
+      height={205}
       controls
-      fallback={<Skeleton className="img-fluid mx-auto" variant="rectangular" height={190} animation={'wave'}/>}
+      fallback={<Skeleton className="img-fluid mx-auto" variant="rectangular" height={205} animation={'wave'}/>}
     />
   );
 }
