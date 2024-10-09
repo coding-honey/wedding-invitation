@@ -10,7 +10,7 @@ export default function MuiDateCalendar() {
   moment.tz.setDefault(defaultTimezone);
   moment.locale(defaultLocale);
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment} dateLibInstance={moment} adapterLocale={moment.locale()}>
+    <LocalizationProvider dateAdapter={AdapterMoment} adapterLocale={moment.locale()}>
       <Suspense fallback={<DayCalendarSkeleton/>}>
         {moment.locale()}
         <DateCalendar
