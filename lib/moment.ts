@@ -7,7 +7,7 @@ moment.updateLocale("ko", {
   week: {
     dow: 1
   }
-})
+});
 
 export default moment;
 export const weddingDay = "2025-01-11";
