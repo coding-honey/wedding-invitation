@@ -5,7 +5,7 @@ export const defaultTimezone = "Asia/Seoul";
 export const defaultLocale = "ko";
 
 moment.tz.setDefault(defaultTimezone);
-moment.locale(defaultLocale);
+// moment.locale(defaultLocale);
 moment.updateLocale(defaultLocale, {
   week: {
     dow: 1
