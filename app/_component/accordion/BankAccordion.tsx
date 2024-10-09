@@ -18,9 +18,10 @@ export interface AccountProps {
 interface BankAccordionProps {
   title: string;
   accounts: AccountProps[];
+  isMobile: boolean;
 }
 
-export default function BankAccordion({title, accounts}: BankAccordionProps) {
+export default function BankAccordion({title, accounts, isMobile}: BankAccordionProps) {
   const {handleOpenSnackbar} = useSnackbar();
 
   return (
@@ -53,7 +54,11 @@ export default function BankAccordion({title, accounts}: BankAccordionProps) {
                     </a>
                 }
                 <div style={{cursor: "pointer"}}>
-                  <CopyToClipboard text={account.title} onCopy={() => handleOpenSnackbar('복사되었습니다.')}>
+                  <CopyToClipboard text={account.title} onCopy={() => {
+                    if (!isMobile) {
+                      handleOpenSnackbar('복사되었습니다.')
+                    }
+                  }}>
                     <FontAwesomeIcon icon={faCopy} size={'xl'}/>
                   </CopyToClipboard>
                 </div>

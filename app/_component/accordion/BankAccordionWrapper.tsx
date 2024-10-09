@@ -1,8 +1,17 @@
 "use client";
 
 import BankAccordion, {AccountProps} from "@/app/_component/accordion/BankAccordion";
+import {useEffect, useState} from "react";
+import {isMobileByUserAgent} from "@/app/_util/mobileUtil";
 
 export default function BankAccordionWrapper() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
+    setIsMobile(isMobileByUserAgent(userAgent));
+  }, []);
+
   const groomAccounts: AccountProps[] = [
     {title: '기업 07210340701013 정동헌', kPayLink: 'https://link.kakaopay.com/_/fuWEOCD'},
     {title: '농협 17043552167686 정석순'},
@@ -16,9 +25,9 @@ export default function BankAccordionWrapper() {
 
   return (
     <>
-      <BankAccordion title="신랑측 계좌번호" accounts={groomAccounts}/>
+      <BankAccordion title="신랑측 계좌번호" accounts={groomAccounts} isMobile={isMobile}/>
       <div className="my-4"/>
-      <BankAccordion title="신부측 계좌번호" accounts={brideAccounts}/>
+      <BankAccordion title="신부측 계좌번호" accounts={brideAccounts} isMobile={isMobile}/>
     </>
   );
 
