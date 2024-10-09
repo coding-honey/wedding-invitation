@@ -71,16 +71,18 @@ export default function CommentList({comments, setComments}: {
         :
         <div className="fs-6">
           {comments.map((comment) => (
-            <div key={comment._id?.toString()} className="border text-start p-3 mb-4">
-              <div className="d-flex justify-content-between align-items-center">
-                <div>@ {comment.name}</div>
-                {comment?.password && comment?.password !== '' &&
-                    <button className="btn-close"
-                            onClick={() => openModal(comment._id?.toString(), comment.password)}/>}
+            <div key={comment._id?.toString()} className="card text-start mb-3">
+              <div className="card-body">
+                <div className="d-flex justify-content-between align-items-center">
+                  <div>@ {comment.name}</div>
+                  {comment?.password && comment?.password !== '' &&
+                      <button className="btn-close"
+                              onClick={() => openModal(comment._id?.toString(), comment.password)}/>}
+                </div>
+                <hr/>
+                <div>{comment.content}</div>
+                <div className="text-end mb-0 text-body-tertiary">{comment.createdAt}</div>
               </div>
-              <hr/>
-              <div>{comment.content}</div>
-              <div className="text-end mb-0 text-body-tertiary">{comment.createdAt}</div>
             </div>
           ))}
           {/* TODO Pagination 추가 */}
