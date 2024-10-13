@@ -1,14 +1,14 @@
-"use server";
+"use client";
 
 import Image from "next/image";
-import {headers} from "next/headers";
 import {lat, lng} from "@/app/_component/NaverMap";
 import {isMobileByUserAgent} from "@/app/_util/mobileUtil";
 
 const encNm = encodeURI("트라디노이");
 
-export default async function MapButtonWrapper() {
-  const userAgent = headers().get("user-agent") || '';
+export default function MapButtonWrapper() {
+  const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
+  // const userAgent = headers().get("user-agent") || ''; // server 용
   const isMobile = isMobileByUserAgent(userAgent);
 
   return (
