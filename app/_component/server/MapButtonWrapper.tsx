@@ -3,13 +3,16 @@
 import Image from "next/image";
 import {lat, lng} from "@/app/_component/NaverMap";
 import {isMobileByUserAgent} from "@/app/_util/mobileUtil";
+import {useEffect, useState} from "react";
 
 const encNm = encodeURI("트라디노이");
 
 export default function MapButtonWrapper() {
-  const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
-  // const userAgent = headers().get("user-agent") || ''; // server 용
-  const isMobile = isMobileByUserAgent(userAgent);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
+    setIsMobile(isMobileByUserAgent(userAgent));
+  }, []);
 
   return (
     <div className="d-flex justify-content-between bg-body-secondary">
