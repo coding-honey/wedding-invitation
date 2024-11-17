@@ -6,10 +6,6 @@ import girlIconImage from "@/public/Image/girl-icon.png";
 import MuiDateCalendar from "@/app/_component/calendar/MuiDateCalendar";
 
 export default function CalendarWrapper() {
-  const weddingMomment = moment("2025-01-11");
-  const today = moment();
-  const diffDays = weddingMomment.diff(today, "days");
-
   return (
     <>
       <div className="d-flex justify-content-center">
@@ -33,12 +29,17 @@ export default function CalendarWrapper() {
           height={24}
           alt="girl icon"/>
       </div>
-      <CalendarDesc days={diffDays}/>
+      <CalendarDesc/>
     </>
   );
 }
 
-const CalendarDesc = ({days}: { days?: number }) => {
+const CalendarDesc = () => {
+  "use Client";
+  const weddingMomment = moment("2025-01-11");
+  const today = moment();
+  const days = weddingMomment.diff(today, "days");
+
   return (
     <div className={"fs-5"}>
       <span className={"fs-4"}>정동헌, 박선영 </span>
