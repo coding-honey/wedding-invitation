@@ -6,7 +6,7 @@ import moment from "@/lib/moment";
 export default function CalendarDesc() {
   const [dDay, setDDay] = useState<number>(0);
   useEffect(() => {
-    const weddingMomment = moment();
+    const weddingMomment = moment("2025-01-11");
     const today = moment();
     setDDay(weddingMomment.diff(today, "days"));
   }, []);
