@@ -4,9 +4,9 @@ import dynamic from "next/dynamic";
 import CalendarWrapper from "@/app/_component/calendar/CalendarWrapper";
 import NaverMap from "@/app/_component/NaverMap";
 import AttendanceWrapper from "@/app/_component/AttendanceWrapper";
-import main1Image from "@/public/Image/main1.png";
-import main2Image from "@/public/Image/main2.png";
-import main3Image from "@/public/Image/main3.png";
+import mainImg1 from "@/public/Image/main-img-1.jpeg";
+import mainImg2 from "@/public/Image/main-img-2.jpeg";
+import mainImg3 from "@/public/Image/main-img-3.png";
 import CommentWrapper from "@/app/_component/comment/CommentWrapper";
 import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
@@ -30,10 +30,10 @@ export default function Home() {
       <div className="section">
         <Image
           className="img-fluid"
-          src={main1Image}
+          src={mainImg1}
           width={430}
           height={645}
-          alt="main picture 1">
+          alt="main image 1">
         </Image>
       </div>
       <div className="section">
@@ -51,10 +51,10 @@ export default function Home() {
       <div className="section">
         <Image
           className="img-fluid"
-          src={main2Image}
+          src={mainImg2}
           width={429}
           height={430}
-          alt="main picture 2">
+          alt="main image 2">
         </Image>
       </div>
       <div className="section">
@@ -141,10 +141,10 @@ export default function Home() {
       <div className="section">
         <Image
           className="img-fluid"
-          src={main3Image}
+          src={mainImg3}
           width={439}
           height={645}
-          alt="main picture 3">
+          alt="main image 3">
         </Image>
       </div>
       <div className="section">
