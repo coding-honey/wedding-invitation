@@ -7,7 +7,7 @@ export default function VideoPlayer() {
   return (
     <ReactPlayer
       className="img-fluid"
-      url="https://youtu.be/IzRK69VWBYY"
+      url="https://youtu.be/nIUhaVeRY2k"
       width={'100%'}
       height={205}
       controls
