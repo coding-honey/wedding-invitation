@@ -12,6 +12,7 @@ import ContactWrapper from "@/app/_component/contact/ContactWrapper";
 import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrapper";
 import SnackbarGlobal from "@/app/_component/snackbar/SnackbarGlobal";
 import MapButtonWrapper from "@/app/_component/server/MapButtonWrapper";
+import SnowfallClient from "@/app/_component/SnowfallClient";
 
 const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
   ssr: false,
@@ -20,6 +21,7 @@ const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"),
 export default function Home() {
   return (
     <div className="container-fluid mw">
+      <SnowfallClient/>
       <div className="section">
         <p className="fs-3">정동헌 & 박선영</p>
         <p className="fs-4 fw-bold">
