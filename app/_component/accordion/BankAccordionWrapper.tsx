@@ -2,14 +2,14 @@
 
 import BankAccordion, {AccountProps} from "@/app/_component/accordion/BankAccordion";
 import {useEffect, useState} from "react";
-import {isMobileByUserAgent} from "@/app/_util/mobileUtil";
+import {isAppleByUserAgent, isMobileByUserAgent} from "@/app/_util/mobileUtil";
 
 export default function BankAccordionWrapper() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
-    setIsMobile(isMobileByUserAgent(userAgent));
+    setIsMobile(isMobileByUserAgent(userAgent) && !isAppleByUserAgent(userAgent));
   }, []);
 
   const groomAccounts: AccountProps[] = [
