@@ -13,6 +13,7 @@ import BankAccordionWrapper from "@/app/_component/accordion/BankAccordionWrappe
 import SnackbarGlobal from "@/app/_component/snackbar/SnackbarGlobal";
 import MapButtonWrapper from "@/app/_component/server/MapButtonWrapper";
 import SnowfallClient from "@/app/_component/SnowfallClient";
+import AudioPlayer from "@/app/_component/AudioPlayer";
 
 const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
   ssr: false,
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <div className="container-fluid mw">
       <SnowfallClient/>
+      <AudioPlayer/>
       <div className="section">
         <p className="fs-3">정동헌 & 박선영</p>
         <p className="fs-4 fw-bold">
