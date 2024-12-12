@@ -11,7 +11,7 @@ export default function AudioPlayer() {
 
   useEffect(() => {
     setTimeout(() => {
-      handleOpenSnackbar("우상단 아이콘 클릭시 음악 재생", "info")
+      handleOpenSnackbar('우측 상단 아이콘을 클릭시 음악이 재생됩니다.', 'info', 'top')
     }, 3000);
   }, [])
 

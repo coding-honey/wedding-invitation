@@ -10,7 +10,10 @@ export interface SnackbarMessage {
   message: string;
   severity: AlertColor;
   key: number;
+  vertical: SnackBarVertical;
 }
+
+export type SnackBarVertical = 'top' | 'bottom';
 
 function SnackbarProvider({children}: any) {
   const [snackPack, setSnackPack] = useState<readonly SnackbarMessage[]>([]);
@@ -31,8 +34,8 @@ function SnackbarProvider({children}: any) {
     }
   }, [snackPack, messageInfo, open]);
 
-  const handleOpen = (message: string, severity: AlertColor = 'success') => {
-    setSnackPack((prev) => [...prev, {message, severity, key: new Date().getTime()}]);
+  const handleOpen = (message: string, severity: AlertColor = 'success', vertical: SnackBarVertical = 'bottom') => {
+    setSnackPack((prev) => [...prev, {message, severity, vertical, key: new Date().getTime()}]);
   };
   const handleClose = (
     event: SyntheticEvent | Event,

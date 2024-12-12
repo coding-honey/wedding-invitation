@@ -15,21 +15,21 @@ export default function SnackbarGlobal() {
   return (
     <Snackbar
       sx={{width: '100%'}}
-      key={messageInfo ? messageInfo.key : null}
+      key={messageInfo?.keyl}
       open={isOpenSnackbar}
       onClose={handleCloseSnackbar}
       TransitionProps={{onExit: handleExitedSnackbar}}
       autoHideDuration={3000}
-      anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+      anchorOrigin={{vertical: messageInfo?.vertical || 'bottom', horizontal: 'center'}}
       TransitionComponent={SlideTransition}
     >
       <Alert
         sx={{width: '100%', borderRadius: '0.375rem'}}
         onClose={handleCloseSnackbar}
-        severity={messageInfo ? messageInfo.severity : null}
+        severity={messageInfo?.severity}
       >
         <span className="fs-6 w-100" style={{lineHeight: '22px'}}>
-          {messageInfo ? messageInfo.message : null}
+          {messageInfo?.message}
         </span>
       </Alert>
     </Snackbar>
