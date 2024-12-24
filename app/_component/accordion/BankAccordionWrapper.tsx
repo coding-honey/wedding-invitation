@@ -5,11 +5,11 @@ import {useEffect, useState} from "react";
 import {isAppleByUserAgent, isMobileByUserAgent} from "@/app/_util/mobileUtil";
 
 export default function BankAccordionWrapper() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isOpenSnackbar, setIsOpenSnackbar] = useState(false);
 
   useEffect(() => {
     const userAgent = typeof window !== 'undefined' ? navigator.userAgent : '';
-    setIsMobile(isMobileByUserAgent(userAgent) && !isAppleByUserAgent(userAgent));
+    setIsOpenSnackbar(isAppleByUserAgent(userAgent) || !isMobileByUserAgent(userAgent));
   }, []);
 
   const groomAccounts: AccountProps[] = [
@@ -25,9 +25,9 @@ export default function BankAccordionWrapper() {
 
   return (
     <>
-      <BankAccordion title="신랑측 계좌번호" accounts={groomAccounts} isMobile={isMobile}/>
+      <BankAccordion title="신랑측 계좌번호" accounts={groomAccounts} isOpenSnackbar={isOpenSnackbar}/>
       <div className="my-4"/>
-      <BankAccordion title="신부측 계좌번호" accounts={brideAccounts} isMobile={isMobile}/>
+      <BankAccordion title="신부측 계좌번호" accounts={brideAccounts} isOpenSnackbar={isOpenSnackbar}/>
     </>
   );
 

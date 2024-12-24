@@ -5,10 +5,7 @@ import {ArrowDropDownIcon} from "@mui/x-date-pickers";
 import {Box} from "@mui/system";
 import Image from "next/image";
 import kPayIcon from "@/public/Image/payment_icon_yellow_small.png";
-import {CopyToClipboard} from "react-copy-to-clipboard";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCopy} from "@fortawesome/free-solid-svg-icons";
-import {useSnackbar} from "@/app/_provider/SnackbarProvider";
+import CopyButton from "@/app/_component/CopyButton";
 
 export interface AccountProps {
   title: string;
@@ -18,12 +15,10 @@ export interface AccountProps {
 interface BankAccordionProps {
   title: string;
   accounts: AccountProps[];
-  isMobile: boolean;
+  isOpenSnackbar: boolean;
 }
 
-export default function BankAccordion({title, accounts, isMobile}: BankAccordionProps) {
-  const {handleOpenSnackbar} = useSnackbar();
-
+export default function BankAccordion({title, accounts, isOpenSnackbar}: BankAccordionProps) {
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
       <Accordion sx={{width: '100%'}}>
@@ -53,15 +48,7 @@ export default function BankAccordion({title, accounts, isMobile}: BankAccordion
                         />
                     </a>
                 }
-                <div style={{cursor: "pointer"}}>
-                  <CopyToClipboard text={account.title} onCopy={() => {
-                    if (!isMobile) {
-                      handleOpenSnackbar('복사되었습니다.')
-                    }
-                  }}>
-                    <FontAwesomeIcon icon={faCopy} size={'xl'}/>
-                  </CopyToClipboard>
-                </div>
+                <CopyButton text={account.title} isOpenSnackbar={isOpenSnackbar}/>
               </div>
               {accounts.length - 1 !== index && (
                 <hr className="my-2"/>
