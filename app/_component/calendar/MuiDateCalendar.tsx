@@ -23,6 +23,7 @@ export default function MuiDateCalendar() {
           sx={{
             ".MuiPickersCalendarHeader-root": {pointerEvents: 'none'},
             ".MuiPickersArrowSwitcher-root": {display: "none"},
+            ".MuiPickersCalendarHeader-labelContainer": {margin: '0 auto'},
             ".MuiPickersCalendarHeader-label": {fontSize: '1.25rem'},
             ".MuiTypography-caption, .MuiPickersDay-root": {fontSize: '1rem', width: '38px', height: '38px'},
             ".MuiDayCalendar-header": {
