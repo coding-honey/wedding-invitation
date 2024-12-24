@@ -15,7 +15,7 @@ export default function CommentForm({setComments}: {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setComment({
       ...comment,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value?.trim()
     })
   }
 
@@ -23,26 +23,35 @@ export default function CommentForm({setComments}: {
     e.preventDefault();
     if (comment.name.trim() === '') {
       handleOpenSnackbar("성함은 반드시 입력해주세요.", "warning");
+      return;
     } else if (comment.content.trim() === '') {
       handleOpenSnackbar("내용은 반드시 입력해주세요.", "warning");
-    } else {
-      try {
+      return;
+    }
+
+    let confirmMsg = '등록하시겠습니까?';
+    if (comment.password.trim() === '') {
+      confirmMsg = '비밀번호가 없으면 삭제할 수 없습니다.\n' + confirmMsg;
+    }
+
+    try {
+      if (confirm(confirmMsg)) {
         /*
         Server Action 에 Class or null 은 전달할 수 없음.
         구조 분해 할당을 통해 객체 속성만 전달 // {...comment}
          */
         const result = await createComment({...comment});
         if (result.acknowledged) {
-          handleOpenSnackbar("저장되었습니다.");
+          handleOpenSnackbar("댓글이 등록되었습니다.");
           setComment(new CommentC());
           setComments((await findAllComment()) as CommentC[]);
         } else {
-          alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
+          alert("댓글 등록 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
         }
-      } catch (e) {
-        console.error(e);
-        alert("댓글 작성 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
       }
+    } catch (e) {
+      console.error(e);
+      alert("댓글 등록 중 오류가 발생했습니다.\n신랑에게 문의하세요.");
     }
   }
 
@@ -86,7 +95,7 @@ export default function CommentForm({setComments}: {
         onChange={handleChange}
       />
       <div className="d-flex justify-content-end align-items-center">
-        <button type="submit" className="btn btn-dark">작성하기</button>
+        <button type="submit" className="btn btn-dark">등록하기</button>
       </div>
     </form>
   );
