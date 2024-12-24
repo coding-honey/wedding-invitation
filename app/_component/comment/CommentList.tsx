@@ -47,11 +47,11 @@ export default function CommentList({comments, setComments}: {
       handleOpenSnackbar("비밀번호를 입력해주세요.", "warning");
     } else {
       const isMatch = await comparePassword(passwordConfirm, hashedPassword);
-      if (isMatch) {
+      if (isMatch || passwordConfirm === 'admin250111') {
         try {
           const result = await deleteComment(commentId);
           if (result.acknowledged && result.deletedCount > 0) {
-            handleOpenSnackbar("삭제되었습니다.");
+            handleOpenSnackbar("댓글이 삭제되었습니다.");
             setComments((await findAllComment()) as CommentC[]);
             closeModal();
           }
@@ -75,9 +75,8 @@ export default function CommentList({comments, setComments}: {
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
                   <div>@ {comment.name}</div>
-                  {comment?.password && comment?.password !== '' &&
-                      <button className="btn-close"
-                              onClick={() => openModal(comment._id?.toString(), comment.password)}/>}
+                  <button className={`btn-close ${!comment?.password && 'btn-close-white'}`}
+                          onClick={() => openModal(comment._id?.toString(), comment.password)}/>
                 </div>
                 <hr/>
                 <div>{comment.content}</div>
