@@ -5,7 +5,7 @@ import SnackbarProvider from "@/app/_provider/SnackbarProvider";
 
 config.autoAddCss = false;
 
-const metaTitle = "동헌 ♡ 선영 결혼식에 초대합니다.";
+const metaTitle = "동헌♡선영 결혼식에 초대합니다.";
 const metaDesc = "정동헌 & 박선영 | 모바일 청첩장";
 export const metadata: Metadata = {
   title: metaTitle,
