@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     email: false,
   },
   openGraph: {
-    title: metaTitle + " openGraph",
-    description: metaDesc + " openGraph",
+    title: metaTitle,
+    description: metaDesc,
   },
   twitter: {
     card: 'summary_large_image',
-    title: metaTitle + " twitter",
-    description: metaDesc + " twitter",
+    title: metaTitle,
+    description: metaDesc,
   },
 };
 
