@@ -30,20 +30,29 @@ export async function deleteComment(_id: string) {
   return {...result}
 }
 
-const yyyyMMdd = moment().format("YYYY-MM-DD ");
+const now = moment();
+const patterns = [
+  now.format("YYYY-MM-DD "), // 연도, 월, 일
+  now.format("YYYY-")        // 연도
+];
+
+const regex = new RegExp(`^(${patterns.join("|")})`);
 
 export async function findAllComment() {
   const collection = await getCollection();
   const rows = await collection.find().sort({
     createdAt: -1
   }).toArray();
+
   return rows.map((row) => {
-    let createdAt = row.createdAt != null ? row.createdAt.replace(yyyyMMdd, "") : "";
+    let createdAt = row.createdAt || "";
+    createdAt = createdAt.replace(regex, "").trim();
     createdAt = createdAt.slice(0, createdAt.lastIndexOf(":"));
+
     return {
       ...row,
       _id: row._id.toString(),
-      createdAt: createdAt,
+      createdAt,
     };
   });
 }
