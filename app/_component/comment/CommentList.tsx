@@ -75,7 +75,7 @@ export default function CommentList({comments, setComments}: {
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
                   <div>@ {comment.name}</div>
-                  <button className={`btn-close ${!comment?.password && 'btn-close-white'}`}
+                  <button className={`btn-close${!comment?.password ? ' btn-close-white' : ''}`}
                           onClick={() => openModal(comment._id?.toString(), comment.password)}/>
                 </div>
                 <hr/>
