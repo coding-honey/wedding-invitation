@@ -14,6 +14,7 @@ import SnackbarGlobal from "@/app/_component/snackbar/SnackbarGlobal";
 import MapButtonWrapper from "@/app/_component/server/MapButtonWrapper";
 import SnowfallClient from "@/app/_component/SnowfallClient";
 import AudioPlayer from "@/app/_component/AudioPlayer";
+import CopyButton from "@/app/_component/CopyButton";
 
 const DynamicVideoPlayer = dynamic(() => import("@/app/_component/VideoPlayer"), {
   ssr: false,
@@ -116,9 +117,11 @@ export default function Home() {
       <hr/>
       <div className="section">
         <p className="fs-3 fw-bold">오시는 길</p>
-        <p>
+        <p className="mb-0">
           트라디노이 6층 하우스웨딩홀<br/>
-          주소: 서울 강남구 도곡로99길 16
+        </p>
+        <p className="d-flex justify-content-center">
+          주소: 서울 강남구 도곡로99길 16 <CopyButton text={'서울 강남구 도곡로99길 16'} iconSize={'lg'} style={{marginLeft: '0.5rem'}}/>
         </p>
         <NaverMap/>
         <MapButtonWrapper/>
@@ -136,9 +139,12 @@ export default function Home() {
             401, 4319, 4419, 500-2, 9507, 9607, 11-3, 917
           </p>
           <p className="fs-4 fw-bold">주차정보</p>
-          <p>
+          <p className="mb-0">
             * 대치2동문화센터 공영주차장입구<br/>
-            주소: 서울 강남구 영동대로65길 24
+          </p>
+          <p className="d-flex justify-content-start">
+            주소: 서울 강남구 영동대로65길 24 <CopyButton text={'서울 강남구 영동대로65길 24'} iconSize={'lg'}
+                                              style={{marginLeft: '0.5rem'}}/>
           </p>
         </div>
       </div>
