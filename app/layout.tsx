@@ -17,10 +17,14 @@ export const metadata: Metadata = {
     email: false,
   },
   openGraph: {
-    title: metaTitle,
-    description: metaDesc,
-    images: ["https://honey-renda-wedding-invitation.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-img-2.1331c9bf.jpeg&w=640&q=75"]
-  }
+    title: metaTitle + " openGraph",
+    description: metaDesc + " openGraph",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: metaTitle + " twitter",
+    description: metaDesc + " twitter",
+  },
 };
 
 export default function RootLayout({
