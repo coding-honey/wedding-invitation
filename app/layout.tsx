@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: metaTitle,
     description: metaDesc,
-    images: ["https://honey-renda-wedding-invitation.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-img-1.2cbabc25.jpeg&w=640&q=75"]
+    images: ["https://honey-renda-wedding-invitation.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-img-2.1331c9bf.jpeg&w=640&q=75"]
   }
 };
 
