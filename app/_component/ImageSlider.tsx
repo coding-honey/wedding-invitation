@@ -32,6 +32,7 @@ export default function ImageSlider() {
             src={album1Image}
             width={408}
             height={230}
+            priority={true}
             alt="Album slide image 1"/>
         </SwiperSlide>
         <SwiperSlide className="mt-auto">
