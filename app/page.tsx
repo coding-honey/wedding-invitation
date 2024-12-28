@@ -27,9 +27,9 @@ export default function Home() {
       <SnowfallClient/>
       <AudioPlayer/>
       <div className="section">
-        <p className="fs-3">정동헌 & 박선영</p>
+        <p className="fs-3">정동헌 🩵 박선영</p>
         <p className="fs-4 fw-bold">
-          2025년 1월 11일 토요일 오후 12시 30분<br/>
+          2025년 01월 11일 토요일 오후 12시 30분<br/>
           트라디노이 6층 하우스웨딩홀
         </p>
       </div>
@@ -44,12 +44,12 @@ export default function Home() {
       <div className="section">
         <p>
           따스한 봄에 만난 사람과<br/>
-          하얗게 눈이 덮인 계절에 결혼합니다.<br/>
+          하얗게 눈 덮인 계절에 결혼합니다.<br/>
           평생 서로에게 단짝이 되어줄<br/>
           저희의 첫날에 초대합니다.<br/>
         </p>
         <p>
-          귀한 걸음 하시어 축복과 격려 주시면<br/>
+          귀한 걸음 하시어 축복과 격려해 주시면<br/>
           더없는 기쁨으로 간직하겠습니다.
         </p>
       </div>
@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <div className="section">
         <div className="row">
-          <div className="col text-end">
+          <div className="col text-end text-body-tertiary">
             <span>정석순</span>
             <span className="mx-2"></span>
             <span>김형순</span>
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </div>
         <div className="row">
-          <div className="col text-end">
+          <div className="col text-end text-body-tertiary">
             <span>김남희</span>
           </div>
           <div className="col text-start">
@@ -135,8 +135,8 @@ export default function Home() {
         <div className="card-body">
           <p className="fs-4 fw-bold">지하철</p>
           <p>
-            [2호선] 삼성역 3번출구 도보 13분<br/>
-            [3호선] 학여울역 1번출구 도보 14분
+            [2호선] 삼성역 3번 출구 도보 8분<br/>
+            [3호선] 학여울역 1번 출구 도보 9분
           </p>
           <p className="fs-4 fw-bold">버스</p>
           <p>

@@ -15,7 +15,7 @@ export default function MuiDateCalendar() {
           defaultValue={moment(weddingDay)}
           readOnly
           slotProps={{
-            calendarHeader: {format: "YYYY년 M월"},
+            calendarHeader: {format: "YYYY.MM"},
             day: {
               lang: 'ko'
             },
