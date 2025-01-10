@@ -7,7 +7,7 @@ export default function CalendarDesc() {
   const [dDay, setDDay] = useState<number>(0);
   useEffect(() => {
     const weddingMomment = moment("2025-01-11");
-    const today = moment();
+    const today = moment().startOf("day");
     setDDay(weddingMomment.diff(today, "days"));
   }, []);
 
