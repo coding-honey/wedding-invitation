@@ -79,7 +79,28 @@ export default function CommentList({comments, setComments}: {
                           onClick={() => openModal(comment._id?.toString(), comment.password)}/>
                 </div>
                 <hr/>
-                <div>{comment.content}</div>
+                <TextField
+                  variant="standard" // 기본 테두리 제거
+                  slotProps={{
+                    input: {
+                      disableUnderline: true, // 밑줄 제거
+                      readOnly: true,
+                    },
+                  }}
+                  sx={{
+                    width: '100%',
+                    padding: 0,
+                    margin: 0,
+                    background: 'none',
+                    border: 'none',
+                    fontSize: 'inherit', // 폰트 스타일 상속
+                    lineHeight: 'inherit',
+                  }}
+                  multiline
+                  value={comment.content}
+                >
+                  {comment.content}
+                </TextField>
                 <div className="text-end mb-0 text-body-tertiary">{comment.createdAt}</div>
               </div>
             </div>

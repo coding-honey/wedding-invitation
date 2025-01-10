@@ -13,9 +13,13 @@ export default function CommentForm({setComments}: {
   const [comment, setComment] = useState<CommentC>(new CommentC());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name === 'name') {
+      e.target.value = e.target.value.trim();
+    }
+
     setComment({
       ...comment,
-      [e.target.name]: e.target.value?.trim()
+      [e.target.name]: e.target.value,
     })
   }
 
