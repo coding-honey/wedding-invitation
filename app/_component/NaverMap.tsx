@@ -22,7 +22,7 @@ export default function NaverMap() {
   return (
     <div className="d-flex justify-content-center">
       <Script type="text/javascript" onLoad={initMap} async={true}
-              src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
+              src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}/>
       <div id="map" style={{width: "100%", height: "400px", backgroundColor: "#E7E7E7"}}/>
     </div>
   );
