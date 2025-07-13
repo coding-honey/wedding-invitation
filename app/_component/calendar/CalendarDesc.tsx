@@ -20,7 +20,7 @@ export default function CalendarDesc() {
           일 남았어요.</> :
         (dDay === 0) ?
           <> <span className={"fs-4"}>오늘 </span>이에요! 🎉</> :
-          <> <span style={{color: "red"}}>{dDay} </span>
+          <> <span style={{color: "red"}}>{-dDay} </span>
             일 지났어요.</>
       }
     </div>
